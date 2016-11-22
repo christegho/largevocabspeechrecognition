@@ -35,5 +35,5 @@ done
 #interpolation - compute weights
 for lm in lm1 lm2 lm3 lm4 lm5
 do
-	echo $lm >> lm.txt
-	base/bin/LPlex -C lib/cfgs/hlm.cfg -s stream -u -t lms/$lm -i o.1 
+	base/bin/LPlex -C lib/cfgs/hlm.cfg -s stream$lm -u -t lms/$lm lib/texts/dev03.dat 
+done
