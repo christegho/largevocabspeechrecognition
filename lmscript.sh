@@ -1,4 +1,4 @@
-#language modeling script
+#language modeling script done
 
 ln -s /usr/local/teach/MLSALT11/Speech/{lib,lms,lattices,base,hmms,scripts} MLSALT11
 
@@ -16,3 +16,24 @@ do
 	./scripts/lmrescore.sh $show lattices decode \ lms/$lm plp-tg$lm FALSE >> lm.txt
 done
 done
+
+#scoring
+for lm in lm1 lm2 lm3 lm4 lm5
+do	
+	echo $lm >> lm.txt
+	./scripts/score.sh plp-tg$lm dev03 rescore >> lm.txt
+done
+
+
+#compute perplexity
+for lm in lm1 lm2 lm3 lm4 lm5
+do
+	echo $lm >> lm.txt
+	base/bin/LPlex -C lib/cfgs/hlm.cfg -u -t lms/$lm lib/texts/dev03.dat >>lm.txt
+done
+
+#interpolation - compute weights
+for lm in lm1 lm2 lm3 lm4 lm5
+do
+	echo $lm >> lm.txt
+	base/bin/LPlex -C lib/cfgs/hlm.cfg -s stream -u -t lms/$lm -i o.1 

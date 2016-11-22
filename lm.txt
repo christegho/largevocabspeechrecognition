@@ -1,0 +1,57 @@
+SPKR                       | # Snt  # Wrd | Corr    Sub    Del    Ins    Err  S.Err |  NCE 
+lm1
+| Sum/Avg                    |  572   25569 | 85.1   11.5    3.4    2.8   17.7   80.8 | -0.674 |
+lm2
+| Sum/Avg                    |  572   25567 | 83.8   12.6    3.6    2.8   19.1   83.0 | -0.598 |
+lm3
+| Sum/Avg                    |  572   25563 | 80.8   14.4    4.8    2.4   21.6   83.7 | -0.502 |
+lm4
+| Sum/Avg                    |  572   25559 | 80.1   14.9    4.9    2.7   22.5   84.8 | -0.460 |
+lm5
+| Sum/Avg                    |  572   25569 | 83.7   12.2    4.1    2.3   18.6   81.1 | -0.647 |
+
+lm1
+LPlex test #0: 3-gram
+perplexity 198.6167, var 13.0218, utterances 508, words predicted 25672
+num tokens 26300, OOV 120, OOV rate 0.47% (excl. </s>)
+
+Access statistics for lms/lm1:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram      15599  78.4%  21.3%   0.4%    -6.48     3.59
+   trigram      25672  39.2%  32.9%  27.9%    -5.29     3.61
+lm2
+LPlex test #0: 3-gram
+perplexity 242.7938, var 14.2254, utterances 508, words predicted 25672
+num tokens 26300, OOV 120, OOV rate 0.47% (excl. </s>)
+
+Access statistics for lms/lm2:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram      16255  75.3%  24.4%   0.4%    -6.66     3.74
+   trigram      25672  36.7%  35.0%  28.3%    -5.49     3.77
+lm3
+LPlex test #0: 3-gram
+perplexity 283.7183, var 11.6097, utterances 508, words predicted 25672
+num tokens 26300, OOV 120, OOV rate 0.47% (excl. </s>)
+
+Access statistics for lms/lm3:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram      18691  68.1%  30.9%   1.0%    -6.51     3.20
+   trigram      25672  27.2%  40.2%  32.6%    -5.65     3.41
+lm4
+LPlex test #0: 3-gram
+perplexity 337.4166, var 11.7604, utterances 508, words predicted 25672
+num tokens 26300, OOV 120, OOV rate 0.47% (excl. </s>)
+
+Access statistics for lms/lm4:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram      19512  65.6%  32.9%   1.5%    -6.59     3.24
+   trigram      25672  24.0%  40.6%  35.4%    -5.82     3.43
+lm5
+LPlex test #0: 3-gram
+perplexity 220.4432, var 12.6747, utterances 508, words predicted 25672
+num tokens 26300, OOV 120, OOV rate 0.47% (excl. </s>)
+
+Access statistics for lms/lm5:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram      15364  80.3%  19.6%   0.1%    -6.59     3.50
+   trigram      25672  40.2%  35.8%  24.0%    -5.40     3.56
