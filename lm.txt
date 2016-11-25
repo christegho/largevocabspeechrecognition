@@ -57,3 +57,26 @@ Lang model  requested  exact backed    n/a     mean    stdev
    trigram      25672  40.2%  35.8%  24.0%    -5.40     3.56
 
 
+lm_int
+LPlex test #0: 3-gram
+perplexity 151.5172, var 10.1269, utterances 508, words predicted 25672
+num tokens 26300, OOV 120, OOV rate 0.47% (excl. </s>)
+
+Access statistics for lm_int:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram      12585  84.5%  15.5%   0.0%    -6.46     3.20
+   trigram      25672  51.0%  32.5%  16.5%    -5.02     3.18
+| Sum/Avg                    |  572   25571 | 85.6   10.6    3.8    2.3   16.8   79.7 | -0.769 |
+
+LPlex test #0: 3-gram
+perplexity 154.8253, var 10.2907, utterances 467, words predicted 24709
+num tokens 25342, OOV 166, OOV rate 0.67% (excl. </s>)
+
+Access statistics for lm_int:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram      12171  83.9%  16.1%   0.0%    -6.52     3.21
+   trigram      24709  50.7%  32.5%  16.7%    -5.04     3.21
+
+
+lm_int eval03
+| Sum/Avg                    |  508   24938 | 87.0    9.7    3.3    2.0   15.0   84.3 | -0.887 |
