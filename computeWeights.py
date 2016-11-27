@@ -1,10 +1,15 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
+def computeWeights():
+#The following function computes the weights for the different LMs based on the EM 
+#procedure for LM component weights
+ 
 streams=np.zeros((5,25672))
 for i in range(5):
 	streams[i,:] = [float(line.rstrip('\n')) for line in open('streamlm'+str(i+1))]
 
-lmda = [.2]*5
+lmda = [ 0.33333333,  0.2       ,  0.13333333,  0.06666667,  0.26666667]
 lmdai= np.zeros((100,5))
 pa = np.zeros((5,25672))
 
