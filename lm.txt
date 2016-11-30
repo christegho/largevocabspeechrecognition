@@ -80,3 +80,59 @@ Lang model  requested  exact backed    n/a     mean    stdev
 
 lm_int eval03
 | Sum/Avg                    |  508   24938 | 87.0    9.7    3.3    2.0   15.0   84.3 | -0.887 |
+
+
+lm_inteval03_DEV011-20010206-XX1830 eval03 eval03_DEV011-20010206-XX1830
+LPlex test #0: 3-gram
+perplexity 172.9128, var 10.3094, utterances 127, words predicted 4366
+num tokens 4493, OOV 0, OOV rate 0.00% (excl. </s>)
+
+Access statistics for lm_inteval03_DEV011-20010206-XX1830:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram       2269  82.7%  17.2%   0.0%    -6.46     3.27
+   trigram       4366  48.0%  33.1%  18.9%    -5.15     3.21
+lm_inteval03_DEV012-20010217-XX1000 eval03 eval03_DEV012-20010217-XX1000
+LPlex test #0: 3-gram
+perplexity 178.2106, var 11.7529, utterances 129, words predicted 4886
+num tokens 5015, OOV 0, OOV rate 0.00% (excl. </s>)
+
+Access statistics for lm_inteval03_DEV012-20010217-XX1000:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram       2496  81.6%  18.4%   0.0%    -6.76     3.42
+   trigram       4886  48.9%  32.1%  19.0%    -5.18     3.43
+lm_inteval03_DEV013-20010220-XX2000 eval03 eval03_DEV013-20010220-XX2000
+LPlex test #0: 3-gram
+perplexity 165.5367, var 10.7153, utterances 145, words predicted 5294
+num tokens 5439, OOV 0, OOV rate 0.00% (excl. </s>)
+
+Access statistics for lm_inteval03_DEV013-20010220-XX2000:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram       2758  83.9%  16.1%   0.0%    -6.54     3.20
+   trigram       5294  47.9%  33.5%  18.6%    -5.11     3.27
+lm_inteval03_DEV014-20010221-XX1830 eval03 eval03_DEV014-20010221-XX1830
+LPlex test #0: 3-gram
+perplexity 233.3791, var 11.2432, utterances 183, words predicted 4625
+num tokens 4809, OOV 1, OOV rate 0.02% (excl. </s>)
+
+Access statistics for lm_inteval03_DEV014-20010221-XX1830:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram       2653  79.8%  20.2%   0.0%    -6.76     3.28
+   trigram       4625  42.6%  33.7%  23.7%    -5.45     3.35
+lm_inteval03_DEV015-20010225-XX0900 eval03 eval03_DEV015-20010225-XX0900
+LPlex test #0: 3-gram
+perplexity 200.1117, var 11.4229, utterances 162, words predicted 4553
+num tokens 4716, OOV 1, OOV rate 0.02% (excl. </s>)
+
+Access statistics for lm_inteval03_DEV015-20010225-XX0900:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram       2493  81.1%  18.9%   0.0%    -6.69     3.33
+   trigram       4553  45.2%  31.8%  22.9%    -5.30     3.38
+lm_inteval03_DEV016-20010228-XX2100 eval03 eval03_DEV016-20010228-XX2100
+LPlex test #0: 3-gram
+perplexity 163.6359, var 9.8511, utterances 127, words predicted 4559
+num tokens 4686, OOV 0, OOV rate 0.00% (excl. </s>)
+
+Access statistics for lm_inteval03_DEV016-20010228-XX2100:
+Lang model  requested  exact backed    n/a     mean    stdev
+    bigram       2318  83.3%  16.7%   0.0%    -6.44     3.13
+   trigram       4559  49.2%  33.8%  17.0%    -5.10     3.14

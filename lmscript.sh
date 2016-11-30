@@ -76,3 +76,29 @@ for show in  eval03_DEV011-20010206-XX1830 eval03_DEV012-20010217-XX1000 eval03_
 do
 	mkdir $show
 done
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.08245508 lms/lm2 -i 0.22638773 lms/lm3 -i 0.06825285 lms/lm4 -i 0.17751581 lms/lm5 lib/wlists/train.lst lms/lm1 lm_inteval03_DEV011-20010206-XX1830
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.03367852 lms/lm2 -i 0.15862806 lms/lm3 -i 0.05707789 lms/lm4 -i 0.40238722 lms/lm5 lib/wlists/train.lst lms/lm1 lm_inteval03_DEV012-20010217-XX1000
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.07465908 lms/lm2 -i 0.11504686 lms/lm3 -i 0.1447565 lms/lm4 -i 0.27217506 lms/lm5 lib/wlists/train.lst lms/lm1 lm_inteval03_DEV013-20010220-XX2000
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0538853 lms/lm2 -i 0.23133703 lms/lm3 -i 0.09826272 lms/lm4 -i 0.19548814 lms/lm5 lib/wlists/train.lst lms/lm1 lm_inteval03_DEV014-20010221-XX1830
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.13375443 lms/lm2 -i 0.14475769 lms/lm3 -i 0.06893803 lms/lm4 -i 0.40826878 lms/lm5 lib/wlists/train.lst lms/lm1 lm_inteval03_DEV015-20010225-XX0900
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.22496165 lms/lm2 -i 0.07626963 lms/lm3 -i 0.208407 lms/lm4 -i 0.09053861 lms/lm5 lib/wlists/train.lst lms/lm1 lm_inteval03_DEV016-20010228-XX2100
+
+
+for show in eval03_DEV011-20010206-XX1830 eval03_DEV012-20010217-XX1000 eval03_DEV013-20010220-XX2000 eval03_DEV014-20010221-XX1830 eval03_DEV015-20010225-XX0900 eval03_DEV016-20010228-XX2100
+do
+for show1 in eval03_DEV011-20010206-XX1830 eval03_DEV012-20010217-XX1000 eval03_DEV013-20010220-XX2000 eval03_DEV014-20010221-XX1830 eval03_DEV015-20010225-XX0900 eval03_DEV016-20010228-XX2100
+
+do	
+
+	./scripts/lmrescore.sh $show1 lattices decode \ lm_int$show plp-tglm_int_$show FALSE 
+done
+done
+
+for show in eval03_DEV011-20010206-XX1830 eval03_DEV012-20010217-XX1000 eval03_DEV013-20010220-XX2000 eval03_DEV014-20010221-XX1830 eval03_DEV015-20010225-XX0900 eval03_DEV016-20010228-XX2100
+for show in eval03_DEV012-20010217-XX1000 
+	do
+	echo lm_int$show eval03  $show 
+	./scripts/score.sh plp-tglm_int_$show  eval03 rescore 
+	#base/bin/LPlex -C lib/cfgs/hlm.cfg -u -t lm_int$show plp-tglm_int/$show.dat  >>lm.txt
+done
