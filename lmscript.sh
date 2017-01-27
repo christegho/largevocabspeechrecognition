@@ -60,8 +60,16 @@ do
 done
 
 
-echo lm_int eval03  >> lm.txt
-./scripts/score.sh plp-tglm_int  eval03 rescore >> lm.txt
+echo lm_int eval03 
+./scripts/score.sh plp-tglm_int  eval03 rescore 
+
+for show in eval03_DEV011-20010206-XX1830 eval03_DEV012-20010217-XX1000 eval03_DEV013-20010220-XX2000 eval03_DEV014-20010221-XX1830 eval03_DEV015-20010225-XX0900 eval03_DEV016-20010228-XX2100
+
+	do
+	echo lm_int  eval03  $show  >>lm.txt
+	base/bin/LPlex -C lib/cfgs/hlm.cfg -u -t lm_int lib/texts/$show.dat  >>lm.txt
+done
+
 
 #show specific interpolation
 for show in  eval03_DEV011-20010206-XX1830 eval03_DEV012-20010217-XX1000 eval03_DEV013-20010220-XX2000 eval03_DEV014-20010221-XX1830 eval03_DEV015-20010225-XX0900 eval03_DEV016-20010228-XX2100
@@ -101,4 +109,19 @@ for show in eval03_DEV012-20010217-XX1000
 	echo lm_int$show eval03  $show 
 	./scripts/score.sh plp-tglm_int_$show  eval03 rescore 
 	#base/bin/LPlex -C lib/cfgs/hlm.cfg -u -t lm_int$show plp-tglm_int/$show.dat  >>lm.txt
+done
+
+for show in eval03_DEV011-20010206-XX1830 eval03_DEV012-20010217-XX1000 eval03_DEV013-20010220-XX2000 eval03_DEV014-20010221-XX1830 eval03_DEV015-20010225-XX0900 eval03_DEV016-20010228-XX2100
+	do
+	echo ----------------------------------- >>lm.txt
+	echo plp_tglm_int1/lm_int$show  eval03  $show  >>lm.txt
+	base/bin/LPlex -C lib/cfgs/hlm.cfg -u -t plp_tglm_int1/lm_int$show lib/texts/$show.dat  >>lm.txt
+done
+
+for show in eval03_DEV011-20010206-XX1830 eval03_DEV012-20010217-XX1000 eval03_DEV013-20010220-XX2000 eval03_DEV014-20010221-XX1830 eval03_DEV015-20010225-XX0900 eval03_DEV016-20010228-XX2100
+
+	do
+	echo ----------------------------------- >>lm.txt
+	echo lm_int  eval03 1bestHyp PP $show  >>lm.txt
+	base/bin/LPlex -C lib/cfgs/hlm.cfg -u -t lm_int plp-tglm_int/$show.dat  >>lm.txt
 done

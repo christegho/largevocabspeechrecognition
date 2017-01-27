@@ -6,10 +6,10 @@ showIndex = 0
 for show in shows:
 	#The following function computes the weights for the different LMs based on the EM 
 	#procedure for LM component weights
-	streamLength = len([float(line.rstrip('\n')) for line in open(show+'/stream'+show+'lm1')]) 
+	streamLength = len([float(line.rstrip('\n')) for line in open(show+'/streamTrue'+show+'lm1')]) 
 	streams=np.zeros((5,streamLength))
 	for i in range(5):
-		streams[i,:] = [float(line.rstrip('\n')) for line in open(show+'/stream'+show+'lm'+str(i+1))]
+		streams[i,:] = [float(line.rstrip('\n')) for line in open(show+'/streamTrue'+show+'lm'+str(i+1))]
 	lmda = [1/float(15), 2/float(15), 3/float(15), 4/float(15), 5/float(15)]
 	lmdai= np.zeros((100,5))
 	pa = np.zeros((5,streamLength))

@@ -1,0 +1,146 @@
+#!/bin/tcsh
+#$ -S /bin/tcsh
+
+set OUTPASS = adapt
+
+set ALLARGS=($*)
+set CHANGED
+if ( $#argv > 1 ) then
+while ( $?CHANGED )
+  unset CHANGED
+  if ( "$argv[1]" == "-OUTPASS" )  then
+    set CHANGED
+    shift argv
+    set OUTPASS = $argv[1]
+    shift argv
+  endif
+end
+endif
+
+if ( $#argv != 5 ) then
+   echo "usage: `basename $0` [-OUTPASS adapt] TESTSET SRC PASS TGT SYSTEM"
+   exit 0
+endif
+
+set TESTSET  = $1
+set SRC      = $2
+set PASS     = $3
+set TGT      = $4
+set SYSTEM   = $5
+
+# cache the command so know what's run
+if (! -d CMDs/$TGT/$TESTSET) mkdir -p CMDs/$TGT/$TESTSET
+set TRAINSET=hmmadapt
+echo "------------------------------------" >> CMDs/$TGT/$TESTSET/${TRAINSET}.cmds
+echo "$0 $ALLARGS" >> CMDs/${TGT}/$TESTSET/${TRAINSET}.cmds
+echo "------------------------------------" >> CMDs/$TGT/$TESTSET/${TRAINSET}.cmds
+
+set HVITE   = base/bin/HVite
+set HLED    = base/bin/HLEd
+set HEREST  = base/bin/HERest
+
+if ( $SYSTEM == "plp" ) then
+    set MMF = hmms/MMF.${SYSTEM}
+    set SCP = lib/flists/${TESTSET}.scp 
+    set CFG = lib/cfgs/hvite.cfg
+    set DICT    = lib/dicts/train.hv.dct
+    set PRUNE = ( -t 250.0 250.0 1000.1 )
+    set MLLRCFG = lib/cfgs/mllr.cfg
+else if ( $SYSTEM == "tandem" ) then
+    set MMF = hmms/MMF.${SYSTEM}
+    set SCP = lib/flists_tandem/${TESTSET}.scp 
+    set CFG = lib/cfgs/hvite_tandem.cfg
+    set DICT    = lib/dicts/train.hv.dct
+    set PRUNE = ( -t 400.0 400.0 2000.1 )
+    set MLLRCFG = lib/cfgs/mllr-tandem.cfg
+else if ( $SYSTEM == "grph-tandem" ) then
+    set MMF = hmms/MMF.${SYSTEM}
+    set SCP = lib/flists_tandem/${TESTSET}.scp 
+    set CFG = lib/cfgs/hvite_tandem.cfg
+    set DICT    = lib/dicts/train-grph.hv.dct
+    set PRUNE = ( -t 400.0 400.0 2000.1 )
+    set MLLRCFG = lib/cfgs/mllr-grph-tandem.cfg
+else if ( $SYSTEM == "hybrid" ) then
+    echo "System hybrid adaptation not supported"
+    exit 0
+else if ( $SYSTEM == "grph-hybrid" ) then
+    echo "System hybrid adaptation not supported"
+    exit 0
+else if ( $SYSTEM == "grph-plp" ) then
+    set MMF = hmms/MMF.${SYSTEM}
+    set SCP = lib/flists/${TESTSET}.scp 
+    set CFG = lib/cfgs/hdecode.cfg
+    set DICT    = lib/dicts/train-grph.hv.dct 
+    set PRUNE = ( -t 250.0 250.0 1000.1 )
+    set MLLRCFG = lib/cfgs/mllr-grph.cfg 
+else 
+    echo "Unknown system $SYSTEM"
+    exit 0
+endif
+
+if (! -d $SRC/$TESTSET/$PASS ) then 
+  echo "Decoding directory missing: $SRC/$TESTSET/$PASS"
+  exit 0;
+endif
+
+set WORKDIR=$TGT/$TESTSET/$OUTPASS
+if ( ! -d  $WORKDIR ) then
+    mkdir -p $WORKDIR/xforms
+    mkdir -p $WORKDIR/flists
+else 
+    echo "Directory exists: $WORKDIR"
+    echo "Delete to run"
+    exit 0
+endif
+
+# Ensure that the output file is in the correct format 
+
+cat > $WORKDIR/run.bat  <<EOF
+#!/bin/bash
+
+#\$ -S /bin/bash
+
+$HLED -A -D -V -i $WORKDIR/adapt.mlf -l '*' -X rec lib/edfiles/delsil.led $SRC/$TESTSET/$PASS/rescore.mlf  > $WORKDIR/LOG.hled
+
+# some MLF labels  may not exist - generate the list of files that have MLF entries
+./scripts/mlf2scp $WORKDIR/adapt.mlf $SCP ${WORKDIR}/flists/${TESTSET}.scp
+
+$HVITE -A -D -i $WORKDIR/model.mlf -H ${MMF} -T 1 -C ${CFG} -y lab -X rec $PRUNE \
+-b \<s\> -a -m -I $WORKDIR/adapt.mlf -S ${WORKDIR}/flists/${TESTSET}.scp $DICT hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG.align
+
+$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
+-J lib/classes -C lib/cfgs/cmllr.cfg -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms cmllr \
+-u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG.cmllr
+
+$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
+-a -J $WORKDIR/xforms cmllr -E $WORKDIR/xforms cmllr \
+-J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr1 \
+-u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG1.mllr 
+
+$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
+-a -J $WORKDIR/xforms mllr1 -E $WORKDIR/xforms mllr1 \
+-J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr2 \
+-u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG2.mllr 
+
+$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
+-a -J $WORKDIR/xforms mllr2 -E $WORKDIR/xforms mllr2 \
+-J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr3 \
+-u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG3.mllr 
+
+$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
+-a -J $WORKDIR/xforms mllr3 -E $WORKDIR/xforms mllr3 \
+-J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr4 \
+-u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG4.mllr 
+
+
+$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
+-a -J $WORKDIR/xforms mllr4 -E $WORKDIR/xforms mllr4 \
+-J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr \
+-u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG.mllr 
+
+EOF
+
+chmod u+x $WORKDIR/run.bat
+qsub -cwd -o $WORKDIR/run.LOG -j y $WORKDIR/run.bat
+
+
