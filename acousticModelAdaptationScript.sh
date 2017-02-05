@@ -4,31 +4,30 @@ do
 ./scripts/1bestlatsExt.sh -SYS ${model} dev03_DEV001-20010117-XX2000  lattices decode ${model}-bg
 done
 
-for model in  grph-plp tandem grph-tandem
+for model in  plp  grph-plp tandem grph-tandem
 do
-./scripts/mergelatsExt.sh -BEAMPRUNE 1000.0 -SYS ${model} dev03_DEV001-20010117-XX2000 lattices decode ${model}-bg
+./scripts/mergelats.sh -SYS ${model} dev03_DEV001-20010117-XX2000 lattices decode ${model}-bg
+./scripts/mergelatsExt.sh -BEAMPRUNE 4000.0 -SYS ${model} dev03_DEV001-20010117-XX2000 lattices decode ${model}-bg/PR4000.0
 done
 
-./scripts/mergelats.sh dev03_DEV001-20010117-XX2000 lattices decode plp-bg
 
+#Rescore
 
-./scripts/hmmrescore.sh dev03_DEV001-20010117-XX2000 plp-bg merge plp-bg plp
-
-for model in  grph-plp tandem grph-tandem
+for model in  grph-plp tandem grph-tandem plp
 do
 ./scripts/hmmrescore.sh dev03_DEV001-20010117-XX2000 ${model}-bg merge ${model}-bg ${model}
 done
 
-for PRUNE in 1000.0 250.0 400.0 500.0 600.0 2000.0 4000.0
+for PRUNE in 4000.0 #1000.0 250.0 400.0 500.0 600.0 2000.0 
 do
-for model in  grph-plp tandem grph-tandem #plp
+for model in  grph-plp tandem grph-tandem plp
 do
 	./scripts/hmmrescoreExt.sh -PRUNE ${PRUNE} dev03_DEV001-20010117-XX2000 ${model}-bg merge ${model}-bg/PR${PRUNE} ${model}
 done
 done
 
-egrep -c File plp-bg/dev03_DEV001-20010117-XX2000/decode/LOG
 
+#scoring
 for model in  plp grph-plp tandem grph-tandem
 do
 echo -------------------------------------------------- >> aa2.txt
@@ -36,17 +35,17 @@ echo ${model} default >> aa2.txt
 ./scripts/score.sh ${model}-bg dev03sub decode  >> aa2.txt
 done
 
-for PRUNE in   250.0 400.0 500.0 600.0 1000.0 2000.0 4000.0
+for PRUNE in 4000.0 #  250.0 400.0 500.0 600.0 1000.0 2000.0 4000.0
 do
 for model in  plp grph-plp tandem grph-tandem
 do
 	echo -------------------------------------------------- >> aa2.txt
 	echo ${model} ${PRUNE} >> aa2.txt
-	time ./scripts/score.sh ${model}-bg/PR${PRUNE} dev03sub decode >> aa2.txt
+	./scripts/score.sh ${model}-bg/PR${PRUNE} dev03sub decode >> aa2.txt
 done
 done
 
-
+#logging
 for PRUNE in 250.0 400.0 500.0 600.0 1000.0 2000.0 4000.0 
 do
 for model in  plp grph-plp tandem grph-tandem
@@ -65,38 +64,100 @@ done
 #################################################################################################################
 #2) Using the 1-best hypothesis generated from the bigram lattice, produce \cas- caded CMLLR and MLLR transforms.
 #################################################################################################################
-
-
-#Adapt and cross adapt
+#Rescore determinized lattices with original and other acoustic models for cross adaptation
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in  grph-plp tandem grph-tandem  plp
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
-	./scripts/hmmadapt.sh dev03_DEV001-20010117-XX2000 ${model}-bg decode ${model}-adapt-bg/def/adaptedby-${model1} ${model1}
+./scripts/hmmrescore.sh dev03_DEV001-20010117-XX2000 ${model}-bg merge ${model1}-bg/${model}-merge-bg ${model1}
+done
+done
+
+for PRUNE in 4000.0
+do
+for model in plp  grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+	./scripts/hmmrescoreExt.sh -PRUNE ${PRUNE} dev03_DEV001-20010117-XX2000 ${model}-bg merge ${model1}-bg/${model}-merge-bg/PR${PRUNE} ${model1}
+done
+done
+done
+
+#scoring 
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+echo -------------------------------------------------- >> aa3.txt
+echo ${model} ${model1} default >> aa3.txt
+./scripts/score.sh ${model1}-bg/${model}-merge-bg dev03sub decode  >> aa3.txt
+done
+done
+#scoring
+for PRUNE in   4000.0
+do
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+	echo -------------------------------------------------- >> aa3.txt
+	echo ${model} ${model1} ${PRUNE} >> aa3.txt
+	./scripts/score.sh ${model1}-bg/${model}-merge-bg/PR${PRUNE} dev03sub decode >> aa3.txt
+done
+done
+done
+
+
+#logging
+for PRUNE in 4000.0 
+do
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+	echo -------------------------------------------------- >> pruning3.txt
+	echo -------------------------------------------------- >> uttLen3.txt
+	echo ${model} ${model1} ${PRUNE} >> pruning3.txt
+	echo ${model} ${model1} ${PRUNE} >> uttLen3.txt
+	grep -C 0 'lattice pruned from'  ${model1}-bg/${model}-merge-bg/PR${PRUNE}/dev03_DEV001-20010117-XX2000/decode/LOG >> pruning3.txt
+	grep -C 0 'utterance length'  ${model1}-bg/${model}-merge-bg/PR${PRUNE}/dev03_DEV001-20010117-XX2000/decode/LOG >> uttLen3.txt
+
+done
+done
+done
+
+###########################################
+#Adapt and cross adapt - hypothesis obtained from rescoring model lattices using model 1
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
+do
+	./scripts/hmmadapt.sh -OUTPASS adapt-${model1} dev03_DEV001-20010117-XX2000 ${model1}-bg/${model}-merge-bg  decode ${model}-adapt-bg/def/adaptedby-${model1} ${model}
 done
 done
 
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in   grph-plp tandem grph-tandem  plp
+for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
-	./scripts/hmmadapt.sh dev03_DEV001-20010117-XX2000 ${model}-bg/PR4000.0 decode ${model}-adapt-bg/4k/adaptedby-${model1} ${model1}
+	./scripts/hmmadapt.sh -OUTPASS adapt-${model1} dev03_DEV001-20010117-XX2000 ${model1}-bg/${model}-merge-bg/PR4000.0  decode ${model}-adapt-bg/4k/adaptedby-${model1} ${model}
 done
 done
 
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in  grph-plp grph-tandem tandem   plp
+for model1 in  grph-plp grph-tandem tandem   plp hybrid grph-hybrid
 do
-	./scripts/hmmadaptExt.sh dev03_DEV001-20010117-XX2000 ${model}-bg decode ${model}-adapt-bg/def-4/adaptedby-${model1} ${model1}
+	./scripts/hmmadaptExt.sh -OUTPASS adapt-${model1} dev03_DEV001-20010117-XX2000 ${model1}-bg/${model}-merge-bg decode ${model}-adapt-bg/def-4/adaptedby-${model1} ${model}
 done
 done
 
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in   grph-plp tandem grph-tandem  plp
+for model1 in   grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
-	./scripts/hmmadaptExt.sh dev03_DEV001-20010117-XX2000 ${model}-bg/PR4000.0 decode ${model}-adapt-bg/4k-4/adaptedby-${model1} ${model1}
+	./scripts/hmmadaptExt.sh -OUTPASS adapt-${model1} dev03_DEV001-20010117-XX2000 ${model1}-bg/${model}-merge-bg/PR4000.0  decode ${model}-adapt-bg/4k-4/adaptedby-${model1} ${model}
 done
 done
 
@@ -105,68 +166,92 @@ for pruning in def-4 4k-4
 do
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in   grph-plp tandem grph-tandem  plp
+for model1 in   grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
 	echo -------------------------------------------------- >> logTX.txt
 	echo ${model} ${model1} ${pruning} >> logTX.txt
 
-	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt/LOG.cmllr >> logTX.txt
-	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt/LOG1.mllr >> logTX.txt
-	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt/LOG2.mllr >> logTX.txt
-	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt/LOG3.mllr >> logTX.txt
-	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt/LOG4.mllr >> logTX.txt
-	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt/LOG.mllr >> logTX.txt
+	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt-${model1}/LOG.cmllr >> logTX.txt
+	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt-${model1}/LOG1.mllr >> logTX.txt
+	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt-${model1}/LOG2.mllr >> logTX.txt
+	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt-${model1}/LOG3.mllr >> logTX.txt
+	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt-${model1}/LOG4.mllr >> logTX.txt
+	grep -C 0 'Reestimation complete - average log prob per frame'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/${f}/adapt-${model1}/LOG.mllr >> logTX.txt
 done
 done
 done
 
 
-#TODO
+
 #These transforms can then be used to rescore lattices:
-for model in  plp grph-plp tandem grph-tandem
-do
-for model1 in  plp grph-plp tandem grph-tandem
-do
-./scripts/hmmrescoreExt.sh -PRUNE 4000.0 -ADAPT ${model}-adapt-bg/def/adaptedby-${model1} adapt dev03_DEV001-20010117-XX2000 plp-bg merge ${model}-adapt-bg/def/adaptedby-${model1} ${model}
-done
-done
 
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in  plp grph-plp tandem grph-tandem
+for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
-./scripts/hmmrescoreExt.sh -PRUNE 4000.0 -ADAPT ${model}-adapt-bg/def-4/adaptedby-${model1} adapt dev03_DEV001-20010117-XX2000 plp-bg merge ${model}-adapt-bg/def-4/adaptedby-${model1} ${model}
+./scripts/hmmrescoreExt.sh -PRUNE 4000.0 -ADAPT ${model}-adapt-bg/def/adaptedby-${model1} adapt-${model1} -OUTPASS decode-${model1} dev03_DEV001-20010117-XX2000 ${model}-bg merge ${model}-adapt-bg/def/adaptedby-${model1} ${model}
 done
 done
 
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in  plp grph-plp tandem grph-tandem
+for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
-./scripts/hmmrescoreExt.sh -PRUNE ${model}-adapt-bg/4k/adaptedby-${model1} adapt dev03_DEV001-20010117-XX2000 plp-bg merge ${model}-adapt-bg/4k/adaptedby-${model1} ${model}
+./scripts/hmmrescoreExt.sh -PRUNE 4000.0 -ADAPT ${model}-adapt-bg/def-4/adaptedby-${model1} adapt-${model1} -OUTPASS decode-${model1} dev03_DEV001-20010117-XX2000 ${model}-bg merge ${model}-adapt-bg/def-4/adaptedby-${model1} ${model}
 done
 done
 
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in  plp grph-plp tandem grph-tandem
+for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
-./scripts/hmmrescoreExt.sh -PRUNE ${model}-adapt-bg/4k-4/adaptedby-${model1} adapt dev03_DEV001-20010117-XX2000 plp-bg merge ${model}-adapt-bg/4k-4/adaptedby-${model1} ${model}
+./scripts/hmmrescoreExt.sh -PRUNE 4000.0 -ADAPT ${model}-adapt-bg/4k/adaptedby-${model1} adapt-${model1} -OUTPASS decode-${model1} dev03_DEV001-20010117-XX2000 ${model}-bg/PR4000.0 merge ${model}-adapt-bg/4k/adaptedby-${model1} ${model}
 done
 done
 
-#TODO
-for pruning in def-4 4k-4
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
+do
+./scripts/hmmrescoreExt.sh -PRUNE 4000.0 -ADAPT ${model}-adapt-bg/4k-4/adaptedby-${model1} adapt-${model1} -OUTPASS decode-${model1} dev03_DEV001-20010117-XX2000 ${model}-bg/PR4000.0 merge ${model}-adapt-bg/4k-4/adaptedby-${model1} ${model}
+done
+done
+
+
+#Verification
+f=dev03_DEV001-20010117-XX2000
+for pruning in def 4k def-4 4k-4
 do
 for model in  plp grph-plp tandem grph-tandem
 do
-for model1 in  plp grph-plp tandem grph-tandem
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
-echo $model
-./scripts/score.sh ${model}-adapt-bg/${pruning}/adaptedby-${model1} dev03sub decode
+echo -------------------------------------- >> ver.txt
+echo $model $model1 $pruning >> ver.txt
+wc -l ${model}-adapt-bg/${pruning}/adaptedby-${model1}/$f/decode-${model1}/flists/dev03_DEV001-20010117-XX2000.scp >> ver.txt
+grep -c "Loading Lattice" ${model}-adapt-bg/${pruning}/adaptedby-${model1}/$f/decode-${model1}/LOG >>ver.txt
+done
+done
+done
+ 
+for pruning in def 4k def-4 4k-4
+do
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+echo -------------------------------------- >> acousticAdaptScoring.txt
+echo $model $model1 $pruning >> acousticAdaptScoring.txt
+./scripts/score.sh ${model}-adapt-bg/${pruning}/adaptedby-${model1} dev03sub decode-${model1} >> acousticAdaptScoring.txt
+done
+done
 done
 
+#TODO Pruning nb of arcs, etc.
 
+######################################################################################################################
+#END - section below included above
+################################################################################
 #for pruning in def-4 4k-4 def 4k
 #do
 #for model in  plp grph-plp tandem grph-tandem
