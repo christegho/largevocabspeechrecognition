@@ -247,7 +247,49 @@ done
 done
 done
 
-#TODO Pruning nb of arcs, etc.
+#verification
+
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+echo -------------------------------------- >> ver.txt
+echo $model $model1 def >> ver.txt
+wc -l ${model1}-bg/${model}-merge-bg/$f/decode/flists/dev03_DEV001-20010117-XX2000.scp >> ver.txt
+grep -c "Loading Lattice" ${model1}-bg/${model}-merge-bg/$f/decode/LOG >>ver.txt
+done
+done
+
+for PRUNE in   4000.0
+do
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+echo -------------------------------------- >> ver.txt
+echo $model $model1 $PRUNE >> ver.txt
+wc -l ${model1}-bg/${model}-merge-bg/PR${PRUNE}/$f/decode/flists/dev03_DEV001-20010117-XX2000.scp >> ver.txt
+grep -c "Loading Lattice" ${model1}-bg/${model}-merge-bg/PR${PRUNE}/$f/decode/LOG >>ver.txt
+done
+done
+done
+
+#logging
+for pruning in def 4k def-4 4k-4
+do
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+	echo -------------------------------------------------- >> pruning4.txt
+	echo -------------------------------------------------- >> uttLen4.txt
+	echo ${model} ${model1} ${pruning} >> pruning4.txt
+	echo ${model} ${model1} ${pruning} >> uttLen4.txt
+	grep -C 0 'lattice pruned from'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/dev03_DEV001-20010117-XX2000/decode-${model1}/LOG >> pruning4.txt
+	grep -C 0 'utterance length'  ${model}-adapt-bg/${pruning}/adaptedby-${model1}/dev03_DEV001-20010117-XX2000/decode-${model1}/LOG >> uttLen4.txt
+done
+done
+done
 
 ######################################################################################################################
 #END - section below included above
