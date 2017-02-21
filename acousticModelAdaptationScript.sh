@@ -1,10 +1,10 @@
 #1) determinise the lattices
-for model in  grph-plp tandem grph-tandem
+for model in  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 ./scripts/1bestlatsExt.sh -SYS ${model} dev03_DEV001-20010117-XX2000  lattices decode ${model}-bg
 done
 
-for model in  plp  grph-plp tandem grph-tandem
+for model in  plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 ./scripts/mergelats.sh -SYS ${model} dev03_DEV001-20010117-XX2000 lattices decode ${model}-bg
 ./scripts/mergelatsExt.sh -BEAMPRUNE 4000.0 -SYS ${model} dev03_DEV001-20010117-XX2000 lattices decode ${model}-bg/PR4000.0
@@ -13,14 +13,14 @@ done
 
 #Rescore
 
-for model in  grph-plp tandem grph-tandem plp
+for model in  grph-plp tandem grph-tandem plp hybrid grph-hybrid
 do
 ./scripts/hmmrescore.sh dev03_DEV001-20010117-XX2000 ${model}-bg merge ${model}-bg ${model}
 done
 
 for PRUNE in 4000.0 #1000.0 250.0 400.0 500.0 600.0 2000.0 
 do
-for model in  grph-plp tandem grph-tandem plp
+for model in  grph-plp tandem grph-tandem plp hybrid grph-hybrid
 do
 	./scripts/hmmrescoreExt.sh -PRUNE ${PRUNE} dev03_DEV001-20010117-XX2000 ${model}-bg merge ${model}-bg/PR${PRUNE} ${model}
 done
@@ -28,7 +28,7 @@ done
 
 
 #scoring
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 echo -------------------------------------------------- >> aa2.txt
 echo ${model} default >> aa2.txt
@@ -37,7 +37,7 @@ done
 
 for PRUNE in 4000.0 #  250.0 400.0 500.0 600.0 1000.0 2000.0 4000.0
 do
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 	echo -------------------------------------------------- >> aa2.txt
 	echo ${model} ${PRUNE} >> aa2.txt
@@ -65,7 +65,7 @@ done
 #2) Using the 1-best hypothesis generated from the bigram lattice, produce \cas- caded CMLLR and MLLR transforms.
 #################################################################################################################
 #Rescore determinized lattices with original and other acoustic models for cross adaptation
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -75,7 +75,7 @@ done
 
 for PRUNE in 4000.0
 do
-for model in plp  grph-plp tandem grph-tandem
+for model in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -85,7 +85,7 @@ done
 done
 
 #scoring 
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -94,10 +94,11 @@ echo ${model} ${model1} default >> aa3.txt
 ./scripts/score.sh ${model1}-bg/${model}-merge-bg dev03sub decode  >> aa3.txt
 done
 done
+
 #scoring
 for PRUNE in   4000.0
 do
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -112,7 +113,7 @@ done
 #logging
 for PRUNE in 4000.0 
 do
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -129,7 +130,7 @@ done
 
 ###########################################
 #Adapt and cross adapt - hypothesis obtained from rescoring model lattices using model 1
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
@@ -137,7 +138,7 @@ do
 done
 done
 
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
@@ -145,7 +146,7 @@ do
 done
 done
 
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in  grph-plp grph-tandem tandem   plp hybrid grph-hybrid
 do
@@ -153,14 +154,14 @@ do
 done
 done
 
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in   grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
 	./scripts/hmmadaptExt.sh -OUTPASS adapt-${model1} dev03_DEV001-20010117-XX2000 ${model1}-bg/${model}-merge-bg/PR4000.0  decode ${model}-adapt-bg/4k-4/adaptedby-${model1} ${model}
 done
 done
-
+#TODO
 f=dev03_DEV001-20010117-XX2000
 for pruning in def-4 4k-4
 do

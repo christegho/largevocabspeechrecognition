@@ -1,4 +1,5 @@
 import numpy as np
+import operator
 #import tabulate as tb
 #sourse http://www.giovannicarmantini.com/2016/01/minimum-edit-distance-in-python
 
@@ -83,19 +84,22 @@ def naive_backtrace(B_matrix):
     return backtrace_idxs
 
 
-def align(word_1, word_2, bt, timing_1, timing_2):
+def align(word_1, word_2, bt, timing_1, timing_2, scores_1, scores_2, none_score):
  
     aligned_word_1 = []
     aligned_word_2 = []
     operations = []
- 
+    timing = []
+    scoresRecomp1 = []
+    scoresRecomp2 = []
+    best1 = {'seq':[], 'score':[]}
     backtrace = bt[::-1]  # make it a forward trace
  
     for k in range(len(backtrace) - 1): 
         i_0, j_0 = backtrace[k]
         i_1, j_1 = backtrace[k+1]
 	
- 	timing = []
+ 	
         w_1_letter = None
         w_2_letter = None
         op = None
@@ -105,29 +109,72 @@ def align(word_1, word_2, bt, timing_1, timing_2):
                 w_1_letter = word_1[i_0]
                 w_2_letter = word_2[j_0]
 		tim = timing_1[i_0]
+		scoreTp = (scores_1[i_0]+scores_2[j_0])/2.0
+		scoresRecomp1.push(scoreTp)
+		scoresRecomp2.push(scoreTp)
+		best1['score'].push(scoreTp)
+		best1['seq'].push(word_1[i_0])
                 op = " "
             else:  # cost increased: substitution
                 w_1_letter = word_1[i_0]
                 w_2_letter = word_2[j_0]
 		tim = timing_1[i_0]
                 op = "s"
+		scoresRecomp1.push(none_score)
+		scoresRecomp2.push((scores_2[j_0])/2.0)
+		values = [(scores_1[i_0])/2.0,(scores_2[j_0])/2.0]
+		arcs = [word_1[i_0],word_2[j_0]]
+		max_index, max_value = max(enumerate(values), key=operator.itemgetter(1))
+		best1['score'].push(max_value)
+		best1['seq'].push(arcs[max_index])
         elif i_0 == i_1:  # insertion
             w_1_letter = " "
             w_2_letter = word_2[j_0]
             op = "i"
 	    tim = timing_2[j_0]
+	    scoresRecomp1.push(none_score)
+	    scoresRecomp2.push((scores_2[j_0])/2.0)
+	    values = [none_score,(scores_2[j_0])/2.0]
+	    arcs = ['!NULL',word_2[j_0]]
+  	    max_index, max_value = max(enumerate(values), key=operator.itemgetter(1))
+	    best1['score'].push(max_value)
+	    best1['seq'].push(arcs[max_index])	
+	    
         else: #  j_0 == j_1,  deletion
             w_1_letter = word_1[i_0]
             w_2_letter = " "
             op = "d"
 	    tim = timing_1[i_0]
+	    scoresRecomp1.push((scores_1[i_0])/2.0)
+	    scoresRecomp2.push(none_score)
+	    values = [(scores_1[i_0])/2.0,none_score]
+	    arcs = [word_1[i_0], '!NULL']
+  	    max_index, max_value = max(enumerate(values), key=operator.itemgetter(1))
+	    best1['score'].push(max_value)
+	    best1['seq'].push(arcs[max_index])
+
  	print tim
         aligned_word_1.append(w_1_letter)
         aligned_word_2.append(w_2_letter)
         operations.append(op)
 	timing.append(tim)
  
-    return aligned_word_1, aligned_word_2, operations, timing
+	#Time readjustment and score averaging
+	for op in range(len(operations)):
+		if operations[op] == 'i' :
+			scoresRecomp1.push(.2)
+			scoresRecomp2.push(.2)
+			timeI = timing[op]
+			if op != 0 and timeI[0] <= timing[op-1][1]:
+				timing[op][0] = timing[op-1][1]+1
+			if op != len(operations)-1 and timeI[1] >= timing[op+1][0]:
+				if timing[op+1][0] > timing[op][0]+1:
+					timing[op][1] = timing[op+1][0]-1
+				else:
+					timing[op+1][0] = max(timing[op][1]+1,timing[op][0]+1)
+					timing[op][1] = timing[op+1][0]-1
+		
+    return aligned_word_1, aligned_word_2, operations, timing, scoresRecomp1, scoresRecomp2, best1
 
 
 
