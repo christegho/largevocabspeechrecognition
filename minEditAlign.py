@@ -44,7 +44,7 @@ def wagner_fischer(word_1, word_2, timing_1, timing_2):
 		ct = 2
 		idt = 2
 	    
-	    print l_1, l_2, timing_1[i-1],timing_2[j-1],D[i-1,j],D[i, j-1], D[i-1,j-1],idt, ct,i,j
+	    #print l_1, l_2, timing_1[i-1],timing_2[j-1],D[i-1,j],D[i, j-1], D[i-1,j-1],idt, ct,i,j
 	    
             deletion = D[i-1,j] + 2
             insertion = D[i, j-1] + 2
@@ -63,7 +63,7 @@ def wagner_fischer(word_1, word_2, timing_1, timing_2):
 		B[i,j] = (deletion==mo2, 0, insertion==mo2)
             
 	    D[i,j] = mo
-	    D_[i,j] = mo2
+	    
 
     return D, B
 
@@ -110,50 +110,50 @@ def align(word_1, word_2, bt, timing_1, timing_2, scores_1, scores_2, none_score
                 w_2_letter = word_2[j_0]
 		tim = timing_1[i_0]
 		scoreTp = (scores_1[i_0]+scores_2[j_0])/2.0
-		scoresRecomp1.push(scoreTp)
-		scoresRecomp2.push(scoreTp)
-		best1['score'].push(scoreTp)
-		best1['seq'].push(word_1[i_0])
+		scoresRecomp1.append(scoreTp)
+		scoresRecomp2.append(scoreTp)
+		best1['score'].append(scoreTp)
+		best1['seq'].append(word_1[i_0])
                 op = " "
             else:  # cost increased: substitution
                 w_1_letter = word_1[i_0]
                 w_2_letter = word_2[j_0]
 		tim = timing_1[i_0]
                 op = "s"
-		scoresRecomp1.push(none_score)
-		scoresRecomp2.push((scores_2[j_0])/2.0)
+		scoresRecomp1.append((scores_1[i_0])/2.0)
+		scoresRecomp2.append((scores_2[j_0])/2.0)
 		values = [(scores_1[i_0])/2.0,(scores_2[j_0])/2.0]
 		arcs = [word_1[i_0],word_2[j_0]]
 		max_index, max_value = max(enumerate(values), key=operator.itemgetter(1))
-		best1['score'].push(max_value)
-		best1['seq'].push(arcs[max_index])
+		best1['score'].append(max_value)
+		best1['seq'].append(arcs[max_index])
         elif i_0 == i_1:  # insertion
             w_1_letter = " "
             w_2_letter = word_2[j_0]
             op = "i"
 	    tim = timing_2[j_0]
-	    scoresRecomp1.push(none_score)
-	    scoresRecomp2.push((scores_2[j_0])/2.0)
+	    scoresRecomp1.append(none_score)
+	    scoresRecomp2.append((scores_2[j_0])/2.0)
 	    values = [none_score,(scores_2[j_0])/2.0]
 	    arcs = ['!NULL',word_2[j_0]]
   	    max_index, max_value = max(enumerate(values), key=operator.itemgetter(1))
-	    best1['score'].push(max_value)
-	    best1['seq'].push(arcs[max_index])	
+	    best1['score'].append(max_value)
+	    best1['seq'].append(arcs[max_index])	
 	    
         else: #  j_0 == j_1,  deletion
             w_1_letter = word_1[i_0]
             w_2_letter = " "
             op = "d"
 	    tim = timing_1[i_0]
-	    scoresRecomp1.push((scores_1[i_0])/2.0)
-	    scoresRecomp2.push(none_score)
+	    scoresRecomp1.append((scores_1[i_0])/2.0)
+	    scoresRecomp2.append(none_score)
 	    values = [(scores_1[i_0])/2.0,none_score]
 	    arcs = [word_1[i_0], '!NULL']
   	    max_index, max_value = max(enumerate(values), key=operator.itemgetter(1))
-	    best1['score'].push(max_value)
-	    best1['seq'].push(arcs[max_index])
+	    best1['score'].append(max_value)
+	    best1['seq'].append(arcs[max_index])
 
- 	print tim
+ 	#print tim
         aligned_word_1.append(w_1_letter)
         aligned_word_2.append(w_2_letter)
         operations.append(op)
@@ -162,8 +162,6 @@ def align(word_1, word_2, bt, timing_1, timing_2, scores_1, scores_2, none_score
 	#Time readjustment and score averaging
 	for op in range(len(operations)):
 		if operations[op] == 'i' :
-			scoresRecomp1.push(.2)
-			scoresRecomp2.push(.2)
 			timeI = timing[op]
 			if op != 0 and timeI[0] <= timing[op-1][1]:
 				timing[op][0] = timing[op-1][1]+1
@@ -179,21 +177,57 @@ def align(word_1, word_2, bt, timing_1, timing_2, scores_1, scores_2, none_score
 
 
 def test():
-	from minEditAlign import *
-	timing_2 = [[1,3],[4,7],[8,10]]
-	timing_1 = [[4,5],[6,8]]
-	word_2 = ["jo", "lo", "po"]
-	word_1 = ["jo", "po"]
-		 
-	D, B = wagner_fischer(word_1, word_2, timing_1, timing_2)
-	bt = naive_backtrace(B)
-		 
+	#from minEditAlign import *
+	print 'test'
 
-	alignment_table = align(word_1, word_2, bt, timing_1, timing_2)
-	alignment_table
+def extractMLF():
+filenames = ['/grph-hybrid-bg/grph-tandem-merge-bg/dev03_DEV001-20010117-XX2000/decode/rescore.mlf','/grph-tandem-bg/grph-plp-merge-bg/PR4000.0/dev03_DEV001-20010117-XX2000/decode/rescore.mlf']
+mlf = [];
+mlfDet = [];
+none_score = 0;
+indir1 = '/remote/mlsalt-2016/ct506/MLSALT11'+ filenames[0]
+indir2 = '/remote/mlsalt-2016/ct506/MLSALT11'+ filenames[1]
+text1 = open(indir1).read();
+text2 = open(indir2).read();
+recs1 = text1.split('.rec"\n')
+recs2 = text2.split('.rec"\n')
+mlf.append('#!MLF!#\n')
 
-	 
-	print("\nAlignment:")
-	print(alignment_table)
+mlf.append('"*'+recs1[0].split('lattices')[1]+'.rec"\n')
+mlfDet.append('*'+recs1[0].split('lattices')[1]+'\n')
+for i in range(1, len(recs1)):
+		words1 = recs1[i].split('.\n')[0].split('\n')
+		words_1, scores_1, timing_1 = extractHyp(words1)
+		words2 = recs2[i].split('.\n')[0].split('\n')
+		words_2, scores_2, timing_2 = extractHyp(words2)
+		D, B = wagner_fischer(words_1, words_2, timing_1, timing_2)
+		bt = naive_backtrace(B)	 
+		aligned_word_1, aligned_word_2, operations, timing, scoresRecomp1, scoresRecomp2, best1 = align(words_1, words_2, bt, timing_1, timing_2, scores_1, scores_2, none_score)
+		for besti in range(len(best1['seq'])):
+			mlf.append(str(int(timing[besti][0])) + ' ' + str(int(timing[besti][1])) + ' ' + best1['seq'][besti] + ' ' + str(best1['score'][besti]) + '\n')
+			mlfDet.append( aligned_word_1[besti] + ' ' + aligned_word_2[besti] + ' ' + str(scoresRecomp1[besti]) + ' '+ str(scoresRecomp2[besti]) + ' '+ operations[besti] + '\n')
+		if i < len(recs1)-1:		
+			mlf.append('.\n"*'+recs1[i].split('.\n')[1].split('lattices')[1]+'.rec"\n')
+			mlfDet.append('*'+recs1[i].split('.\n')[1].split('lattices')[1]+'\n')
 
-#
+mlf.append('.')
+mlfFile = open('rescore.mlf', 'w')
+for item in mlf:
+  	mlfFile.write("%s" % item)
+
+mlfFile2 = open('rescore2.mlf', 'w')
+for item in mlfDet:
+  	mlfFile2.write("%s" % item)
+
+
+
+def extractHyp(words1):
+	words_1 = []
+	scores_1 = []
+	timing_1 = []
+	for words_i in range(len(words1)-1):
+				hyps = words1[words_i].split(' ')
+				words_1.append(hyps[2])
+				scores_1.append(float(hyps[3]))
+				timing_1.append([float(hyps[0]), float(hyps[1])])
+	return words_1, scores_1, timing_1
