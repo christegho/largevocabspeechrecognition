@@ -89,9 +89,9 @@ for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
-echo -------------------------------------------------- >> aa3.txt
-echo ${model} ${model1} default >> aa3.txt
-./scripts/score.sh ${model1}-bg/${model}-merge-bg dev03sub decode  >> aa3.txt
+echo -------------------------------------------------- >> aa32.txt
+echo ${model} ${model1} default >> aa32.txt
+./scripts/score.sh ${model}-bg/${model1}-merge-bg dev03sub decode  >> aa32.txt
 done
 done
 
@@ -102,9 +102,9 @@ for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
-	echo -------------------------------------------------- >> aa3.txt
-	echo ${model} ${model1} ${PRUNE} >> aa3.txt
-	./scripts/score.sh ${model1}-bg/${model}-merge-bg/PR${PRUNE} dev03sub decode >> aa3.txt
+	echo -------------------------------------------------- >> aa32.txt
+	echo ${model} ${model1} ${PRUNE} >> aa32.txt
+	./scripts/score.sh ${model}-bg/${model1}-merge-bg/PR${PRUNE} dev03sub decode >> aa32.txt
 done
 done
 done
@@ -123,6 +123,22 @@ do
 	echo ${model} ${model1} ${PRUNE} >> uttLen3.txt
 	grep -C 0 'lattice pruned from'  ${model1}-bg/${model}-merge-bg/PR${PRUNE}/dev03_DEV001-20010117-XX2000/decode/LOG >> pruning3.txt
 	grep -C 0 'utterance length'  ${model1}-bg/${model}-merge-bg/PR${PRUNE}/dev03_DEV001-20010117-XX2000/decode/LOG >> uttLen3.txt
+
+done
+done
+done
+
+
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+	echo -------------------------------------------------- >> pruning3.txt
+
+	echo ${model} ${model1} def >> pruning3.txt
+
+	grep -C 0 'lattice pruned from'  ${model1}-bg/${model}-merge-bg/dev03_DEV001-20010117-XX2000/decode/LOG >> pruning3.txt
+
 
 done
 done
@@ -161,7 +177,7 @@ do
 	./scripts/hmmadaptExt.sh -OUTPASS adapt-${model1} dev03_DEV001-20010117-XX2000 ${model1}-bg/${model}-merge-bg/PR4000.0  decode ${model}-adapt-bg/4k-4/adaptedby-${model1} ${model}
 done
 done
-#TODO
+
 f=dev03_DEV001-20010117-XX2000
 for pruning in def-4 4k-4
 do
@@ -186,7 +202,7 @@ done
 
 #These transforms can then be used to rescore lattices:
 
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
@@ -194,7 +210,7 @@ do
 done
 done
 
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
@@ -202,7 +218,7 @@ do
 done
 done
 
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
@@ -210,7 +226,7 @@ do
 done
 done
 
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in  grph-plp tandem grph-tandem  plp hybrid grph-hybrid
 do
@@ -237,7 +253,7 @@ done
  
 for pruning in def 4k def-4 4k-4
 do
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -249,8 +265,8 @@ done
 done
 
 #verification
-
-for model in  plp grph-plp tandem grph-tandem
+#TODO
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -263,7 +279,7 @@ done
 
 for PRUNE in   4000.0
 do
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -278,7 +294,7 @@ done
 #logging
 for pruning in def 4k def-4 4k-4
 do
-for model in  plp grph-plp tandem grph-tandem
+for model in  plp grph-plp tandem grph-tandem 
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
