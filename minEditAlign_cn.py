@@ -208,8 +208,8 @@ def extractMLF(alpha, noneSc, file1, file2, timalign, decode1, decode2):
 	recs2 = text2.split('.rec"\n')
 	mlf.append('#!MLF!#\n')
 
-	mlf.append('"*'+recs1[0].split('lattices')[1]+'.rec"\n')
-	mlfDet.append('*'+recs1[0].split('lattices')[1]+'\n')
+	mlf.append(recs1[0]+'.rec"\n')
+	mlfDet.append(recs1[0]+'\n')
 	for i in range(1, len(recs1)):
 			words1 = recs1[i].split('.\n')[0].split('\n')
 			words_1, scores_1, timing_1 = extractHyp(words1)
@@ -222,8 +222,8 @@ def extractMLF(alpha, noneSc, file1, file2, timalign, decode1, decode2):
 				mlf.append(str(int(timing[besti][0])) + ' ' + str(int(timing[besti][1])) + ' ' + best1['seq'][besti] + ' ' + str(best1['score'][besti]) + '\n')
 				mlfDet.append( aligned_word_1[besti] + ' ' + aligned_word_2[besti] + ' ' + str(scoresRecomp1[besti]) + ' '+ str(scoresRecomp2[besti]) + ' '+ operations[besti] + '\n')
 			if i < len(recs1)-1:		
-				mlf.append('.\n"*'+recs1[i].split('.\n')[1].split('lattices')[1]+'.rec"\n')
-				mlfDet.append('*'+recs1[i].split('.\n')[1].split('lattices')[1]+'\n')
+				mlf.append('.\n'+recs1[i].split('.\n')[1]+'.rec"\n')
+				mlfDet.append('*'+recs1[i].split('.\n')[1]+'\n')
 
 	mlf.append('.')
 	mlfFile = open('/home/ct506/MLSALT11/copy/dev03_DEV001-20010117-XX2000/decode/rescore.mlf', 'w')
