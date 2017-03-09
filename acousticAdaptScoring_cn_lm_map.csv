@@ -1,0 +1,30 @@
+plp default,14,0.31
+grph-plp default,14.9,0.286
+tandem default,12,0.334
+grph-tandem default,12.4,0.305
+hybrid default,10.2,0.218
+grph-hybrid default,10.9,0.286
+plp plp def-4,13.1,0.323
+plp grph-plp def-4,12,0.306
+plp tandem def-4,12,0.304
+plp grph-tandem def-4,11.7,0.293
+plp hybrid def-4,11.2,0.28
+plp grph-hybrid def-4,11.5,0.303
+grph-plp plp def-4,12.7,0.305
+grph-plp grph-plp def-4,13.5,0.318
+grph-plp tandem def-4,12.5,0.305
+grph-plp grph-tandem def-4,12.4,0.281
+grph-plp hybrid def-4,11.8,0.279
+grph-plp grph-hybrid def-4,12,0.283
+tandem plp def-4,10.9,0.344
+tandem grph-plp def-4,11,0.35
+tandem tandem def-4,11.4,0.349
+tandem grph-tandem def-4,10.9,0.343
+tandem hybrid def-4,10.4,0.341
+tandem grph-hybrid def-4,10.3,0.335
+grph-tandem plp def-4,11.3,0.305
+grph-tandem grph-plp def-4,11.6,0.298
+grph-tandem tandem def-4,11.5,0.319
+grph-tandem grph-tandem def-4,11.7,0.323
+grph-tandem hybrid def-4,11.1,0.319
+grph-tandem grph-hybrid def-4,10.9,0.291

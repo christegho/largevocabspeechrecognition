@@ -1,4 +1,4 @@
-filenames = ['testingSys_cn2.txt']
+filenames = ['testingSys_cn_cost.txt']
 indir1 = '/remote/mlsalt-2016/ct506/MLSALT11/'+ filenames[0]
 text = open(indir1).read();
 lines = text.split('|\n')

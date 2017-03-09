@@ -313,6 +313,51 @@ for model in  plp grph-plp tandem grph-tandem  hybrid grph-hybrid
 do
 ./scripts/cnrescoreExt.sh -LMMODEL $model dev03_DEV001-20010117-XX2000 ${model}-bg decode ${model}-bg/CN
 done
+
+#####################################################
+#mapping
+#####################################################
+
+for pruning in def-4
+do
+for model in  plp grph-plp tandem grph-tandem
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+dir=${model}-adapt-bg/${pruning}/adaptedby-${model1}/CN/dev03_DEV001-20010117-XX2000/decode-${model1}_cn
+base/conftools/smoothtree-mlf.pl lib/trees/${model}-bg_decode_cn.tree ${dir}/rescore.mlf >> ${dir}/rescore-tree.mlf
+done
+done
+done
+
+for model in  plp grph-plp tandem grph-tandem   hybrid grph-hybrid
+do
+dir=${model}-bg/CN/dev03_DEV001-20010117-XX2000/decode_cn
+base/conftools/smoothtree-mlf.pl lib/trees/${model}-bg_decode_cn.tree ${dir}/rescore.mlf >> ${dir}/rescore-tree.mlf
+done
+
+#Scoring with map tree
+
+#scoring
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+echo -------------------------------------------------- >> acousticAdaptScoring_cn_lm_map.txt
+echo ${model} default  >> acousticAdaptScoring_cn_lm_map.txt
+./scripts/score.sh -CONFTREE lib/trees/${model}-bg_decode_cn.tree ${model}-bg/CN dev03sub decode_cn  >> acousticAdaptScoring_cn_lm_map.txt
+done
+
+for pruning in def-4 
+do
+for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+echo -------------------------------------------------- >> acousticAdaptScoring_cn_lm_map.txt
+echo $model $model1 ${pruning} >> acousticAdaptScoring_cn_lm_map.txt
+./scripts/score.sh -CONFTREE lib/trees/${model}-bg_decode_cn.tree ${model}-adapt-bg/${pruning}/adaptedby-${model1}/CN dev03sub decode-${model1}_cn >> acousticAdaptScoring_cn_lm_map.txt
+done
+done
+done
 #####################################
 ## Scoring CNs 
 #####################################
@@ -345,7 +390,7 @@ done
 done
 
 
-for PRUNE in 4000.0 #  250.0 400.0 500.0 600.0 1000.0 2000.0 4000.0
+for PRUNE in 4000.0 
 do
 for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -606,37 +651,124 @@ done
 done
 done
 done
-#TODO
-for model1 in  plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+
+
+##########################
+#CN ROVER Mapping
+##########################
+for model1 in  plp grph-plp tandem grph-tandem
 do
-for model2 in  hybrid grph-hybrid
+for model2 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+for model3 in  tandem
+do
+for model4 in  hybrid grph-hybrid
 do
 for ta in 0.5
 do
-for alpha in  0.8
+for alpha in  0.3 0.5 0.6 0.8
 do
-for none in 0 
+for none in  0.2 0.4 0.7 0.9
 do
-for del 2 4 7
+if [ "${model1}-${model2}" != "${model3}-${model4}" ]
+then
+file1=${model1}-adapt-bg/def-4/adaptedby-${model2}/CN
+file2=${model3}-adapt-bg/def-4/adaptedby-${model4}/CN
+d1=decode-${model2}_cn
+d2=decode-${model4}_cn
+echo $alpha $none $ta ${model1}-${model2} ${model3}-${model4} >>testingSys_cn.txt
+echo $alpha $none $ta ${model1}-${model2} ${model3}-${model4} 
+python minEditAlign_cn.py --alpha $alpha --none $none --ta $ta --file1 $file1 --file2 $file2 --d1 $d1 --d2 $d2
+./scripts/score.sh copy dev03sub decode >>testingSys_cn.txt
+fi
+done
+done
+done
+done
+done
+done
+done
+
+#In PRog
+for model1 in  plp grph-plp tandem grph-tandem
 do
-for sub 2 4 7
+for model2 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
-for ins 2 4 7
+for model3 in grph-tandem hybrid grph-hybrid
 do
+for ta in 0.5
+do
+for alpha in  0.2 0.4 0.6 0.8
+do
+for none in 0.2 0.4 0.7 0.9
+do
+file1=${model1}-adapt-bg/def-4/adaptedby-${model2}/CN
+file2=${model3}-bg/CN
+d1=decode-${model2}_cn
+d2=decode_cn
+echo $alpha $none $ta ${model1}-${model2} ${model3} >>testingSys_cn.txt
+echo $alpha $none $ta ${model1}-${model2} ${model3} 
+python minEditAlign_cn.py --alpha $alpha --none $none --ta $ta --file1 $file1 --file2 $file2 --d1 $d1 --d2 $d2
+./scripts/score.sh copy dev03sub decode >>testingSys_cn.txt
+done
+done
+done
+done
+done
+done
+
+for model1 in  tandem 
+do
+for model2 in  hybrid grph-hybrid
+do
+for model3 in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+for ta in 0.5
+do
+for alpha in  0.2 0.4 0.6 0.8
+do
+for none in  0.2 0.4 0.7 0.9
+do
+file2=${model1}-adapt-bg/def-4/adaptedby-${model2}
+file1=${model3}-bg/CN
+d2=decode-${model2}_cn
+d1=decode_cn
+echo $alpha $none $ta ${model3} ${model1}-${model2} >>testingSys_cn.txt
+echo $alpha $none $ta ${model3} ${model1}-${model2}
+python minEditAlign_cn.py --alpha $alpha --none $none --ta $ta --file1 $file1 --file2 $file2 --d1 $d1 --d2 $d2
+./scripts/score.sh copy dev03sub decode >>testingSys_cn.txt
+done
+done
+done
+done
+done
+done
+
+
+for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+for model2 in hybrid grph-hybrid
+do
+for ta in 0.5
+do
+for alpha in  0.2 0.4 0.6 0.8
+do
+for none in 0.2 0.4 0.7 0.9
+do
+if [ "${model1}" != "${model2}" ]
+then
 file1=${model1}-bg/CN
 file2=${model2}-bg/CN
-d1=decode-_cn
+d1=decode_cn
 d2=decode_cn
-echo $alpha $none $ta ${model1} ${model2} $sub $del $ins >>testingSys_cn2.txt
-echo $alpha $none $ta ${model1} ${model2} 
-python minEditAlign_cn2.py --alpha $alpha --none $none --ta $ta --file1 $file1 --file2 $file2 --d1 $d1 --d2 $d2 --sub $sub --ins $ins --del $del
-./scripts/score.sh copy dev03sub decode >>testingSys_cn2.txt
+echo $alpha $none $ta ${model1} ${model2} >>testingSys_cn.txt
+echo $alpha $none $ta ${model1} ${model2}
+python minEditAlign_cn.py --alpha $alpha --none $none --ta $ta --file1 $file1 --file2 $file2 --d1 $d1 --d2 $d2
+./scripts/score.sh copy dev03sub decode >>testingSys_cn.txt
+fi
 done
 done
 done
 done
-done 
 done
-done
-done
-done
+

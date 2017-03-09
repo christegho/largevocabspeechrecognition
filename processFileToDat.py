@@ -1,11 +1,11 @@
-shows = ['eval03_DEV011-20010206-XX1830','eval03_DEV012-20010217-XX1000','eval03_DEV013-20010220-XX2000','eval03_DEV014-20010221-XX1830','eval03_DEV015-20010225-XX0900','eval03_DEV016-20010228-XX2100']
+import argparse
 
-for show in shows:
-	indir = 'plp-tglm_int3_'+show+'/'+show+'/rescore/rescore.mlf' 
+def toDatFile(inFile, outFile):
+	indir = inFile#'plp-tglm_int3_'+show+'/'+show+'/rescore/rescore.mlf' 
 	text = open(indir).read();
 	bestLt = text.split('.\n"')
 	dat = [];
-	for i in range(len(bestLt)):
+	for i in range(1,len(bestLt)):
 		words = bestLt[i].split('\n')
 		if i == len(bestLt)-1:
 			maxWord = len(words)-2
@@ -17,7 +17,23 @@ for show in shows:
 				wordT = words[word]
 				dat.append(wordT.split()[2])	
 		dat.append('</s>\n')
-	outfile = open('plp-tglm_int3_'+show+'/'+show+'4.dat','w')
+	outfile = open(outFile,'w') #open('plp-tglm_int3_'+show+'/'+show+'4.dat','w')
 	outfile.write(" ".join(dat))
 	outfile.close()
 
+
+def main() :
+    
+    parser = argparse.ArgumentParser(description='ROVER.')
+    parser.add_argument('--in', dest='inFile', action='store', required=True,
+                        help='alpha')
+    parser.add_argument('--out', dest='outFile', action='store', required=True,
+                        help='none score')
+    
+    args = parser.parse_args()
+    toDatFile(args.inFile, args.outFile)
+
+    
+    
+if __name__ == '__main__':
+    main()

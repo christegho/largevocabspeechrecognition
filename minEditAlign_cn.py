@@ -196,7 +196,7 @@ def test():
 	print alignment_table
 
 def extractMLF(alpha, noneSc, file1, file2, timalign, decode1, decode2):
-	filenames = [file1+'/dev03_DEV001-20010117-XX2000/' +decode1+ '/rescore.mlf',file2+'/dev03_DEV001-20010117-XX2000/' +decode2+ '/rescore.mlf']
+	filenames = [file1+'/dev03_DEV001-20010117-XX2000/' +decode1+ '/rescore-tree.mlf',file2+'/dev03_DEV001-20010117-XX2000/' +decode2+ '/rescore-tree.mlf']
 	mlf = [];
 	mlfDet = [];
 	none_score = noneSc;

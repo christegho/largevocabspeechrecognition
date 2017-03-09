@@ -1,4 +1,4 @@
-filenames = ['testingSys_cn2.txt']
+filenames = ['testingSys_cn.txt']
 indir1 = '/remote/mlsalt-2016/ct506/MLSALT11/'+ filenames[0]
 text = open(indir1).read();
 lines = text.split('|\n')
@@ -31,6 +31,6 @@ for ref in systems:
 
 import csv
 
-with open('minmodels_cn2.txt', 'wb') as f:
+with open('minmodels_cn.txt', 'wb') as f:
     w = csv.writer(f)
     w.writerow(minModels.items())
