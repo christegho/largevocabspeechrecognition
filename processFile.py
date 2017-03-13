@@ -9,8 +9,9 @@ def processFile(filename, outfilename):
 		if (len(exp)!=0):
 			exp = exp.split('\n')
 			expList.append(exp[0])
-			expList.append(exp[1].split('   ')[12])
-			expList.append(exp[1].split('   ')[13].split(' |')[1])
+			print exp
+			expList.append(exp[1].split(' ')[10])
+			expList.append(exp[1].split(' ')[13])
 			expList.append('\n')
 
 

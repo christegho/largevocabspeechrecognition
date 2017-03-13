@@ -1,0 +1,52 @@
+#!/bin/csh -f
+#$ -S /bin/csh
+
+set DATEMASK
+
+# Check Number of Args 
+if (( $#argv != 3) && ( $#argv != 4)) then
+   echo "Usage: lats2scp latdir srcscp tgtscp [latext]"
+   exit 1
+endif
+
+set LATDIR = $1
+set SRCSCP = $2
+set TGTSCP = $3
+
+if ( $#argv == 4) then
+     set LATEXT = $4
+else 
+     set LATEXT = lat
+endif
+
+if ( ! -f $SRCSCP ) then
+   echo "Source filename $SRCSCP doesn't exists"
+   exit 1
+endif
+
+if ( -f $TGTSCP ) then
+   echo "Target filename $TGTSCP exists: need to delete to run lat2scp"
+   exit 1
+endif
+
+# Need to see whether datemask has been used - speaker will be stripped
+if ( -f lib/htesystem/HTE.system ) then
+    source lib/htesystem/HTE.system
+endif
+
+# Problematic as speaker name may have been stripped - check just in case
+if ( $?DATEMASK ) then
+    foreach lat (`\ls -1 $LATDIR`)
+        set latname = `basename $lat .${LATEXT}.gz`
+        awk -f base/lib/awks/scp2nospeaker.awk $SRCSCP | paste $SRCSCP - | grep $latname | awk '{print $1}' >> $TGTSCP
+    end
+else 
+    foreach lat (`\ls -1 $LATDIR`)
+        set latname = `basename $lat .${LATEXT}.gz`
+        echo $latname
+        grep $latname $SRCSCP >> $TGTSCP
+    end
+endif
+
+mv $TGTSCP ${TGTSCP}.orig
+sort ${TGTSCP}.orig > $TGTSCP

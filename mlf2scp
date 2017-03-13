@@ -1,0 +1,31 @@
+#!/bin/csh -f
+#$ -S /bin/csh
+
+# Check Number of Args 
+if ( $#argv != 3)  then
+   echo "Usage: $0 mlf srcscp tgtscp"
+   exit 1
+endif
+
+set MLF = $1
+set SRCSCP = $2
+set TGTSCP = $3
+
+if ( ! -f $SRCSCP ) then
+   echo "Source filename $SRCSCP doesn't exists"
+   exit 1
+endif
+
+if ( -f $TGTSCP ) then
+   echo "Target filename $TGTSCP exists: need to delete to run lat2scp"
+   exit 1
+endif
+
+# Need to see whether datemask has been used - speaker will be stripped
+if ( -f lib/htesystem/HTE.system ) then
+    source lib/htesystem/HTE.system
+endif
+
+foreach file (`awk -f base/lib/awks/mlf2filename.awk $MLF`)
+    awk -f base/lib/awks/scp2nospeaker.awk $SRCSCP | paste $SRCSCP - | grep $file | awk '{print $1}' >> $TGTSCP
+end    

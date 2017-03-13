@@ -1,0 +1,480 @@
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.35374934894 lms/lm2 -i 0.195098521812 lms/lm3 -i 0.192293550269 lms/lm4 -i 0.00160756949109 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.361344328765 lms/lm2 -i 0.128265499441 lms/lm3 -i 0.253373939495 lms/lm4 -i 0.0419206039182 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.498842775649 lms/lm2 -i 0.0931370147253 lms/lm3 -i 0.239826562261 lms/lm4 -i 0.000815939207623 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.4361883656 lms/lm2 -i 0.12317676575 lms/lm3 -i 0.270466363833 lms/lm4 -i 0.00126369294933 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.525732622301 lms/lm2 -i 0.0931668332028 lms/lm3 -i 0.26669894736 lms/lm4 -i 0.00270252693992 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.449178792274 lms/lm2 -i 0.103787759078 lms/lm3 -i 0.244260791811 lms/lm4 -i 8.94540914234e-06 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.470184439739 lms/lm2 -i 0.132041527772 lms/lm3 -i 0.220352673494 lms/lm4 -i 9.13419102813e-06 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.581487281458 lms/lm2 -i 0.151130346869 lms/lm3 -i 0.260605668937 lms/lm4 -i 1.98728073534e-07 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.595211084647 lms/lm2 -i 0.111327613064 lms/lm3 -i 0.259011270172 lms/lm4 -i 0.000821923064164 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.602321871267 lms/lm2 -i 0.11220614789 lms/lm3 -i 0.210394570204 lms/lm4 -i 0.0305539738388 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.536648258739 lms/lm2 -i 0.112360735748 lms/lm3 -i 0.18991489984 lms/lm4 -i 7.6934313715e-06 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.441531703099 lms/lm2 -i 0.113449215048 lms/lm3 -i 0.256600419132 lms/lm4 -i 0.0198918465737 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.5114045733 lms/lm2 -i 0.147823234365 lms/lm3 -i 0.241484201648 lms/lm4 -i 3.11540196017e-05 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.489702593442 lms/lm2 -i 0.171534913161 lms/lm3 -i 0.16713882466 lms/lm4 -i 6.87448550709e-08 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.558947454044 lms/lm2 -i 0.135557828602 lms/lm3 -i 0.241807652006 lms/lm4 -i 1.61176427661e-07 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.581464115466 lms/lm2 -i 0.125136406474 lms/lm3 -i 0.269537294109 lms/lm4 -i 2.1593947378e-07 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.61468192141 lms/lm2 -i 0.117261692144 lms/lm3 -i 0.257526799594 lms/lm4 -i 3.31953030294e-07 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.579301304228 lms/lm2 -i 0.141029943881 lms/lm3 -i 0.247234670981 lms/lm4 -i 6.42802346307e-07 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.424109800445 lms/lm2 -i 0.103728166536 lms/lm3 -i 0.390756966377 lms/lm4 -i 0.012712204631 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.378241792496 lms/lm2 -i 0.115993319524 lms/lm3 -i 0.228826309371 lms/lm4 -i 0.0129339493304 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.541980943715 lms/lm2 -i 0.0864210222566 lms/lm3 -i 0.335811598254 lms/lm4 -i 0.017199649275 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.521577145086 lms/lm2 -i 0.0777278236417 lms/lm3 -i 0.354322321492 lms/lm4 -i 0.0241778621958 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.507347760485 lms/lm2 -i 0.0842664564448 lms/lm3 -i 0.309984980754 lms/lm4 -i 0.000425402527633 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.488645025024 lms/lm2 -i 0.111923109736 lms/lm3 -i 0.24046435991 lms/lm4 -i 0.0262316448126 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB001-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.196025680365 lms/lm2 -i 0.011658036754 lms/lm3 -i 0.18123829946 lms/lm4 -i 0.119605959034 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.19673034466 lms/lm2 -i 0.0144336259024 lms/lm3 -i 0.236828607299 lms/lm4 -i 0.078690728415 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.212048037427 lms/lm2 -i 0.00239595378752 lms/lm3 -i 0.238267962739 lms/lm4 -i 0.0620063929142 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.191054307039 lms/lm2 -i 0.00874830872204 lms/lm3 -i 0.206964991037 lms/lm4 -i 0.0674618434535 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.179108435475 lms/lm2 -i 0.0133044029708 lms/lm3 -i 0.193838917773 lms/lm4 -i 0.0669948719007 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.186086549805 lms/lm2 -i 0.0107692359384 lms/lm3 -i 0.190242043997 lms/lm4 -i 0.0565552558091 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.212266224272 lms/lm2 -i 0.00851236647775 lms/lm3 -i 0.16318049359 lms/lm4 -i 0.125418003149 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.158208264585 lms/lm2 -i 0.0425336516147 lms/lm3 -i 0.240116583496 lms/lm4 -i 0.12484718318 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.227460923264 lms/lm2 -i 0.00963230350832 lms/lm3 -i 0.207566456237 lms/lm4 -i 0.11507948597 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.151460388303 lms/lm2 -i 0.0218330493524 lms/lm3 -i 0.213926868867 lms/lm4 -i 0.117722107613 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.123190137141 lms/lm2 -i 0.0170057060091 lms/lm3 -i 0.199616915215 lms/lm4 -i 0.112779502923 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.121351974743 lms/lm2 -i 0.0320410026673 lms/lm3 -i 0.222955922488 lms/lm4 -i 0.100343148651 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.19659829619 lms/lm2 -i 0.0435269358882 lms/lm3 -i 0.170049667672 lms/lm4 -i 0.0825854113822 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.219924143551 lms/lm2 -i 0.0430877540332 lms/lm3 -i 0.23154063941 lms/lm4 -i 0.0657031328312 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.196194456589 lms/lm2 -i 0.0454250613278 lms/lm3 -i 0.222169899377 lms/lm4 -i 0.0791637311346 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.198071894201 lms/lm2 -i 0.0558323669185 lms/lm3 -i 0.215455582759 lms/lm4 -i 0.0541639103194 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.200060380643 lms/lm2 -i 0.0123521659986 lms/lm3 -i 0.201677847682 lms/lm4 -i 0.0673818325271 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.156992329245 lms/lm2 -i 0.0610733224482 lms/lm3 -i 0.206128311995 lms/lm4 -i 0.04923440383 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.171388161068 lms/lm2 -i 0.0181777631259 lms/lm3 -i 0.196787107555 lms/lm4 -i 0.0863679615545 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.177864350047 lms/lm2 -i 0.0505888728128 lms/lm3 -i 0.210791691656 lms/lm4 -i 0.0577662804925 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.205187465022 lms/lm2 -i 0.0106877022207 lms/lm3 -i 0.239797046824 lms/lm4 -i 0.0734464751112 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.203643034891 lms/lm2 -i 0.0453830210277 lms/lm3 -i 0.229035986179 lms/lm4 -i 0.0475810849724 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.168732740311 lms/lm2 -i 0.00406502080299 lms/lm3 -i 0.237444986716 lms/lm4 -i 0.0758004118544 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.165168739051 lms/lm2 -i 0.0322883691084 lms/lm3 -i 0.208159190415 lms/lm4 -i 0.0377225366238 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB002-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.289528762059 lms/lm2 -i 0.139081374179 lms/lm3 -i 0.421787183478 lms/lm4 -i 0.023367604757 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.20366944217 lms/lm2 -i 0.180816981456 lms/lm3 -i 0.465502591904 lms/lm4 -i 0.11629504094 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.249995964225 lms/lm2 -i 0.140116780175 lms/lm3 -i 0.426790465286 lms/lm4 -i 0.116447509375 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.211757169319 lms/lm2 -i 0.209539027517 lms/lm3 -i 0.386908584051 lms/lm4 -i 0.143144662332 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.24635091348 lms/lm2 -i 0.137512350803 lms/lm3 -i 0.429067275393 lms/lm4 -i 0.123893565668 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.225108892884 lms/lm2 -i 0.208978504936 lms/lm3 -i 0.374922362806 lms/lm4 -i 0.140488297785 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.254849421486 lms/lm2 -i 0.303497966365 lms/lm3 -i 0.292469691889 lms/lm4 -i 0.049565383454 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.277610142765 lms/lm2 -i 0.10442813983 lms/lm3 -i 0.414369895373 lms/lm4 -i 0.149800991463 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.25848227851 lms/lm2 -i 0.17698279585 lms/lm3 -i 0.402680878846 lms/lm4 -i 0.124452807707 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.315175873419 lms/lm2 -i 0.155128737908 lms/lm3 -i 0.38006093023 lms/lm4 -i 0.0952454055939 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.35699285169 lms/lm2 -i 0.250593072186 lms/lm3 -i 0.248200952475 lms/lm4 -i 0.0886416696663 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.295875651113 lms/lm2 -i 0.103478192249 lms/lm3 -i 0.393556672293 lms/lm4 -i 0.153330099688 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.19747431253 lms/lm2 -i 0.215254232521 lms/lm3 -i 0.468221682588 lms/lm4 -i 0.0618980444008 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.218145707658 lms/lm2 -i 0.0507744396677 lms/lm3 -i 0.482117962913 lms/lm4 -i 0.188445520081 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.22913942793 lms/lm2 -i 0.0700221061393 lms/lm3 -i 0.471301975912 lms/lm4 -i 0.144143217021 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.254237053824 lms/lm2 -i 0.189899803086 lms/lm3 -i 0.412805559814 lms/lm4 -i 0.0871260196356 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.278436956648 lms/lm2 -i 0.152857447776 lms/lm3 -i 0.385257915578 lms/lm4 -i 0.100025388299 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.265724696911 lms/lm2 -i 0.136451084513 lms/lm3 -i 0.409777311729 lms/lm4 -i 0.123264625292 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.208874094365 lms/lm2 -i 0.23152511942 lms/lm3 -i 0.327557592861 lms/lm4 -i 0.0667815735218 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.270980621121 lms/lm2 -i 0.143363437017 lms/lm3 -i 0.461029356445 lms/lm4 -i 0.0742942978839 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.244594407779 lms/lm2 -i 0.0485512171035 lms/lm3 -i 0.518110074188 lms/lm4 -i 0.121599995702 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.248357611994 lms/lm2 -i 0.150222887771 lms/lm3 -i 0.462330813577 lms/lm4 -i 0.0865069652312 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.260107833839 lms/lm2 -i 0.134911782384 lms/lm3 -i 0.464726917676 lms/lm4 -i 0.0810898129415 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.212727390839 lms/lm2 -i 0.0976741322732 lms/lm3 -i 0.505905623367 lms/lm4 -i 0.127886945028 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB003-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 2.32152511451e-09 lms/lm2 -i 0.00178562462166 lms/lm3 -i 6.18702751314e-05 lms/lm4 -i 0.574317891959 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.91792826156e-06 lms/lm2 -i 0.113316084434 lms/lm3 -i 2.95876687328e-10 lms/lm4 -i 0.303576217146 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 3.59878989769e-08 lms/lm2 -i 0.00206854385052 lms/lm3 -i 0.129728597932 lms/lm4 -i 0.442241461191 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.00270033132e-05 lms/lm2 -i 0.00282924442081 lms/lm3 -i 1.00620983636e-06 lms/lm4 -i 0.433884881372 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 6.78130219106e-08 lms/lm2 -i 4.30078813089e-12 lms/lm3 -i 2.97561403127e-09 lms/lm4 -i 0.332833665663 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.0113260791e-05 lms/lm2 -i 0.016513893696 lms/lm3 -i 0.347484762375 lms/lm4 -i 0.177779795476 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.41107304761e-08 lms/lm2 -i 2.96392433552e-06 lms/lm3 -i 0.0317188929186 lms/lm4 -i 0.410079920362 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 5.73960870363e-12 lms/lm2 -i 0.213503461803 lms/lm3 -i 5.519860363e-07 lms/lm4 -i 0.0146071767754 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 2.01453963507e-09 lms/lm2 -i 6.1243334143e-07 lms/lm3 -i 0.1944493356 lms/lm4 -i 0.361401965076 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.73223225035e-06 lms/lm2 -i 4.81338180093e-11 lms/lm3 -i 1.7124505104e-06 lms/lm4 -i 0.310490150765 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 7.74289286772e-08 lms/lm2 -i 1.02228041749e-07 lms/lm3 -i 8.52217613154e-07 lms/lm4 -i 0.0275818009974 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 2.5167882224e-08 lms/lm2 -i 2.29901294898e-08 lms/lm3 -i 0.0996971747733 lms/lm4 -i 0.180951774225 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 9.60662020178e-09 lms/lm2 -i 0.00139413273038 lms/lm3 -i 0.0262858010262 lms/lm4 -i 0.288093502385 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.22326137241e-07 lms/lm2 -i 1.52952334352e-07 lms/lm3 -i 3.25994070302e-06 lms/lm4 -i 0.391520243395 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 3.59878989769e-08 lms/lm2 -i 0.00206854385052 lms/lm3 -i 0.129728597932 lms/lm4 -i 0.442241461191 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.82142731094e-05 lms/lm2 -i 4.2757786338e-09 lms/lm3 -i 6.18015166016e-05 lms/lm4 -i 0.263242322231 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 3.60576582384e-06 lms/lm2 -i 6.17981931021e-05 lms/lm3 -i 0.000222012462085 lms/lm4 -i 0.14196832093 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.04226101751e-06 lms/lm2 -i 5.4612677307e-07 lms/lm3 -i 0.175485438836 lms/lm4 -i 0.270439277657 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 2.95695136756e-09 lms/lm2 -i 0.0034612331885 lms/lm3 -i 0.0892762157915 lms/lm4 -i 0.159459586447 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.21424015674e-11 lms/lm2 -i 2.05733240308e-05 lms/lm3 -i 0.00901089472578 lms/lm4 -i 0.148708535308 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.76556533928e-09 lms/lm2 -i 0.000189768440101 lms/lm3 -i 0.184407751398 lms/lm4 -i 0.250464059964 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.82142731094e-05 lms/lm2 -i 4.2757786338e-09 lms/lm3 -i 6.18015166016e-05 lms/lm4 -i 0.263242322231 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 5.89601835819e-06 lms/lm2 -i 1.00454845925e-05 lms/lm3 -i 0.0071595581056 lms/lm4 -i 0.164179329802 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 1.58877589866e-07 lms/lm2 -i 7.72155285065e-07 lms/lm3 -i 0.398979022739 lms/lm4 -i 0.111088083945 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB004-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.490638549882 lms/lm2 -i 1.21909475376e-10 lms/lm3 -i 0.37060354998 lms/lm4 -i 6.59449726462e-06 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.454600970208 lms/lm2 -i 5.75850159828e-12 lms/lm3 -i 3.4710628999e-11 lms/lm4 -i 1.03405729038e-06 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.22714927646 lms/lm2 -i 8.1889946412e-11 lms/lm3 -i 4.26272220702e-13 lms/lm4 -i 6.08528000416e-07 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.355945485234 lms/lm2 -i 1.3878326765e-07 lms/lm3 -i 4.6694641724e-05 lms/lm4 -i 0.0682891101432 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.32805764364 lms/lm2 -i 0.0022271867428 lms/lm3 -i 2.76881902814e-13 lms/lm4 -i 2.5924665454e-07 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.285616827074 lms/lm2 -i 7.70219507358e-12 lms/lm3 -i 1.06397608201e-13 lms/lm4 -i 0.000140703432442 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.314828337738 lms/lm2 -i 2.34273415484e-08 lms/lm3 -i 0.391051893073 lms/lm4 -i 1.41265719403e-06 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.498663626223 lms/lm2 -i 1.91963918421e-05 lms/lm3 -i 0.0161690562855 lms/lm4 -i 0.181955339674 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.115087669444 lms/lm2 -i 4.74614745059e-10 lms/lm3 -i 4.93751735337e-11 lms/lm4 -i 0.180619374131 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.330294644889 lms/lm2 -i 5.20667622933e-12 lms/lm3 -i 6.53488449239e-10 lms/lm4 -i 0.228893399308 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.115087669444 lms/lm2 -i 4.74614745059e-10 lms/lm3 -i 4.93751735337e-11 lms/lm4 -i 0.180619374131 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.169808973849 lms/lm2 -i 1.80727992972e-11 lms/lm3 -i 4.73402502266e-10 lms/lm4 -i 0.144376140803 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.17755575091 lms/lm2 -i 2.96895585206e-06 lms/lm3 -i 0.117044138525 lms/lm4 -i 2.58480032705e-05 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.235211421918 lms/lm2 -i 4.62061049711e-05 lms/lm3 -i 8.89787248656e-07 lms/lm4 -i 3.70634395542e-05 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.133316248164 lms/lm2 -i 0.00193803939735 lms/lm3 -i 6.4985100774e-07 lms/lm4 -i 0.000176483653276 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.461356274013 lms/lm2 -i 8.68300108634e-08 lms/lm3 -i 3.25405318402e-05 lms/lm4 -i 0.207894008343 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.20461010733 lms/lm2 -i 0.104695095834 lms/lm3 -i 2.99053094737e-11 lms/lm4 -i 4.08637745151e-05 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.133316248164 lms/lm2 -i 0.00193803939735 lms/lm3 -i 6.4985100774e-07 lms/lm4 -i 0.000176483653276 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.300690162705 lms/lm2 -i 1.7411265114e-09 lms/lm3 -i 1.49399824271e-06 lms/lm4 -i 0.0423247575957 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.285421363642 lms/lm2 -i 4.45689951208e-10 lms/lm3 -i 1.16897786306e-07 lms/lm4 -i 0.1889118005 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.133316248164 lms/lm2 -i 0.00193803939735 lms/lm3 -i 6.4985100774e-07 lms/lm4 -i 0.000176483653276 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.461356274013 lms/lm2 -i 8.68300108634e-08 lms/lm3 -i 3.25405318402e-05 lms/lm4 -i 0.207894008343 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.20461010733 lms/lm2 -i 0.104695095834 lms/lm3 -i 2.99053094737e-11 lms/lm4 -i 4.08637745151e-05 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0633336161407 lms/lm2 -i 3.65912907945e-08 lms/lm3 -i 2.32122977838e-07 lms/lm4 -i 0.151642911799 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB005-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.772665318789 lms/lm2 -i 0.226699550429 lms/lm3 -i 2.71617508767e-19 lms/lm4 -i 3.88880125261e-05 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.999523378301 lms/lm2 -i 7.5062858538e-09 lms/lm3 -i 1.37796575987e-19 lms/lm4 -i 2.85086052362e-08 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.772665318789 lms/lm2 -i 0.226699550429 lms/lm3 -i 2.71617508767e-19 lms/lm4 -i 3.88880125261e-05 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.999523378301 lms/lm2 -i 7.5062858538e-09 lms/lm3 -i 1.37796575987e-19 lms/lm4 -i 2.85086052362e-08 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.720147453583 lms/lm2 -i 0.277306745162 lms/lm3 -i 9.18736244212e-10 lms/lm4 -i 0.00024254085967 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.999523378301 lms/lm2 -i 7.5062858538e-09 lms/lm3 -i 1.37796575987e-19 lms/lm4 -i 2.85086052362e-08 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.772665318789 lms/lm2 -i 0.226699550429 lms/lm3 -i 2.71617508767e-19 lms/lm4 -i 3.88880125261e-05 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.999523378301 lms/lm2 -i 7.5062858538e-09 lms/lm3 -i 1.37796575987e-19 lms/lm4 -i 2.85086052362e-08 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.999523378301 lms/lm2 -i 7.5062858538e-09 lms/lm3 -i 1.37796575987e-19 lms/lm4 -i 2.85086052362e-08 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.999523378301 lms/lm2 -i 7.5062858538e-09 lms/lm3 -i 1.37796575987e-19 lms/lm4 -i 2.85086052362e-08 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.720147453583 lms/lm2 -i 0.277306745162 lms/lm3 -i 9.18736244212e-10 lms/lm4 -i 0.00024254085967 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.999523378301 lms/lm2 -i 7.5062858538e-09 lms/lm3 -i 1.37796575987e-19 lms/lm4 -i 2.85086052362e-08 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.772665318789 lms/lm2 -i 0.226699550429 lms/lm3 -i 2.71617508767e-19 lms/lm4 -i 3.88880125261e-05 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.999523378301 lms/lm2 -i 7.5062858538e-09 lms/lm3 -i 1.37796575987e-19 lms/lm4 -i 2.85086052362e-08 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.889752163678 lms/lm2 -i 0.107465696122 lms/lm3 -i 6.10067811724e-20 lms/lm4 -i 1.95423172694e-05 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB006-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.00118749938118 lms/lm2 -i 0.197241991033 lms/lm3 -i 0.0385696570028 lms/lm4 -i 0.219816183818 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 2.96851542271e-05 lms/lm2 -i 0.183419085 lms/lm3 -i 0.0860847332608 lms/lm4 -i 0.162610042237 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000381629060764 lms/lm2 -i 0.225345459194 lms/lm3 -i 0.0546097976988 lms/lm4 -i 0.193670812459 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 3.44582502326e-05 lms/lm2 -i 0.186030740353 lms/lm3 -i 0.0776949232027 lms/lm4 -i 0.188767192298 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000653114882859 lms/lm2 -i 0.191744457311 lms/lm3 -i 0.0670142128256 lms/lm4 -i 0.187595073799 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 2.96851542271e-05 lms/lm2 -i 0.183419085 lms/lm3 -i 0.0860847332608 lms/lm4 -i 0.162610042237 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000563290876125 lms/lm2 -i 0.227315770642 lms/lm3 -i 0.0852944344783 lms/lm4 -i 0.206903541599 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000537768445629 lms/lm2 -i 0.21275199451 lms/lm3 -i 0.0795023733316 lms/lm4 -i 0.216473201893 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000403184440725 lms/lm2 -i 0.220412058529 lms/lm3 -i 0.0542256024565 lms/lm4 -i 0.201055304246 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000403184440725 lms/lm2 -i 0.220412058529 lms/lm3 -i 0.0542256024565 lms/lm4 -i 0.201055304246 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000403184440725 lms/lm2 -i 0.220412058529 lms/lm3 -i 0.0542256024565 lms/lm4 -i 0.201055304246 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000732347941786 lms/lm2 -i 0.225592403523 lms/lm3 -i 0.0884964766146 lms/lm4 -i 0.208750483435 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.00164482802847 lms/lm2 -i 0.192506285742 lms/lm3 -i 0.03242560207 lms/lm4 -i 0.231147550696 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000759691513993 lms/lm2 -i 0.171069845784 lms/lm3 -i 0.0405798960214 lms/lm4 -i 0.217171477292 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000470711299781 lms/lm2 -i 0.209303304867 lms/lm3 -i 0.0558679366041 lms/lm4 -i 0.216814645475 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.00154720296957 lms/lm2 -i 0.165041629363 lms/lm3 -i 0.0418801952107 lms/lm4 -i 0.206085543625 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.00143137413079 lms/lm2 -i 0.17568608892 lms/lm3 -i 0.0445777543007 lms/lm4 -i 0.213561112835 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.00143137413079 lms/lm2 -i 0.17568608892 lms/lm3 -i 0.0445777543007 lms/lm4 -i 0.213561112835 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.00106195466067 lms/lm2 -i 0.204412634294 lms/lm3 -i 0.046337819247 lms/lm4 -i 0.219070982287 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000832120817817 lms/lm2 -i 0.191279229352 lms/lm3 -i 0.104073419946 lms/lm4 -i 0.157695039473 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000870669344813 lms/lm2 -i 0.200189634759 lms/lm3 -i 0.0483056763124 lms/lm4 -i 0.207884756278 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000518655994272 lms/lm2 -i 0.18610285015 lms/lm3 -i 0.0576200061105 lms/lm4 -i 0.190551565943 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0006153599185 lms/lm2 -i 0.190444386055 lms/lm3 -i 0.0654296624281 lms/lm4 -i 0.188482389534 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.000466753439763 lms/lm2 -i 0.195596847035 lms/lm3 -i 0.0694612937058 lms/lm4 -i 0.172384625745 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB007-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.19513144411 lms/lm2 -i 0.00549179456173 lms/lm3 -i 0.335903413385 lms/lm4 -i 0.0517197063744 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.153152419588 lms/lm2 -i 0.0251744898299 lms/lm3 -i 0.349451996222 lms/lm4 -i 0.0379455906305 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.172340548465 lms/lm2 -i 0.0148589651512 lms/lm3 -i 0.32942449257 lms/lm4 -i 0.0464020123883 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.149245021904 lms/lm2 -i 0.0181898268987 lms/lm3 -i 0.339621717174 lms/lm4 -i 0.0314557728916 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.149040567934 lms/lm2 -i 0.00822309218659 lms/lm3 -i 0.334686489107 lms/lm4 -i 0.0389935842642 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.165160069582 lms/lm2 -i 0.0110588753593 lms/lm3 -i 0.333094198383 lms/lm4 -i 0.0216321830395 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.207016290346 lms/lm2 -i 0.00431993882496 lms/lm3 -i 0.334219145577 lms/lm4 -i 0.0429448320836 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.160961728607 lms/lm2 -i 0.0102576663471 lms/lm3 -i 0.402135202757 lms/lm4 -i 0.0362424230329 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.153361199632 lms/lm2 -i 0.0200427570989 lms/lm3 -i 0.367015003241 lms/lm4 -i 0.0256434545631 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.152458101947 lms/lm2 -i 0.00679009288363 lms/lm3 -i 0.37229186153 lms/lm4 -i 0.0200895652727 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.158142036047 lms/lm2 -i 0.0135626650362 lms/lm3 -i 0.336963181474 lms/lm4 -i 0.0268305755105 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.167484120919 lms/lm2 -i 0.0111337772605 lms/lm3 -i 0.332821546496 lms/lm4 -i 0.0238827388081 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.145914257996 lms/lm2 -i 0.00711164318218 lms/lm3 -i 0.38543146678 lms/lm4 -i 0.0128118855736 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.117073534885 lms/lm2 -i 0.00641473996025 lms/lm3 -i 0.368392713753 lms/lm4 -i 0.0295056143888 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.116376961583 lms/lm2 -i 0.015326061119 lms/lm3 -i 0.403717886734 lms/lm4 -i 0.00816517753407 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.114813867019 lms/lm2 -i 0.00132740230832 lms/lm3 -i 0.39907661573 lms/lm4 -i 0.0264360698574 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0947930237475 lms/lm2 -i 0.0181625563206 lms/lm3 -i 0.392173853385 lms/lm4 -i 0.0316223849912 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.104647711707 lms/lm2 -i 0.0122579407141 lms/lm3 -i 0.35756241811 lms/lm4 -i 0.0231203834494 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.147512570884 lms/lm2 -i 0.00334254317749 lms/lm3 -i 0.377414145964 lms/lm4 -i 0.0292042031559 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.135081094157 lms/lm2 -i 0.014660047644 lms/lm3 -i 0.342471954589 lms/lm4 -i 0.0468525231776 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0870762239708 lms/lm2 -i 0.0289992396455 lms/lm3 -i 0.399414221175 lms/lm4 -i 0.0230924546889 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0963606102051 lms/lm2 -i 0.000703565036673 lms/lm3 -i 0.39393218885 lms/lm4 -i 0.0194626255168 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.118120051387 lms/lm2 -i 0.014660560078 lms/lm3 -i 0.370803723947 lms/lm4 -i 0.0302447079911 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.149381711438 lms/lm2 -i 0.00306672612386 lms/lm3 -i 0.357054614518 lms/lm4 -i 0.0232558901599 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB008-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.497616312221 lms/lm2 -i 0.0539629246681 lms/lm3 -i 0.0746753200121 lms/lm4 -i 0.023899115238 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.503056846881 lms/lm2 -i 0.0278092056411 lms/lm3 -i 0.0677349845886 lms/lm4 -i 0.0271877075557 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.567119408361 lms/lm2 -i 0.0375941039095 lms/lm3 -i 0.0861825931721 lms/lm4 -i 0.0244023754709 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.586593501885 lms/lm2 -i 0.0465692653149 lms/lm3 -i 0.0593243425941 lms/lm4 -i 0.0286943998316 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.524875660301 lms/lm2 -i 0.0447323877245 lms/lm3 -i 0.0697266927091 lms/lm4 -i 0.023365260186 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.571457596653 lms/lm2 -i 0.0419690637781 lms/lm3 -i 0.0796502567503 lms/lm4 -i 0.0247651369437 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.454793079099 lms/lm2 -i 0.070590065014 lms/lm3 -i 0.106540365064 lms/lm4 -i 0.023629168227 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.433673597109 lms/lm2 -i 0.0661402347504 lms/lm3 -i 0.0889903194659 lms/lm4 -i 0.0230885995708 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.514031296108 lms/lm2 -i 0.0604219973689 lms/lm3 -i 0.0857775303495 lms/lm4 -i 0.0257045416482 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.497513663637 lms/lm2 -i 0.0644398770075 lms/lm3 -i 0.0831539232584 lms/lm4 -i 0.0264264399496 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.457722249829 lms/lm2 -i 0.0704349785054 lms/lm3 -i 0.0876026930417 lms/lm4 -i 0.0225569078451 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.494451818833 lms/lm2 -i 0.0653569052652 lms/lm3 -i 0.069135547053 lms/lm4 -i 0.0219654070562 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.513715686853 lms/lm2 -i 0.00239229720449 lms/lm3 -i 0.132466473235 lms/lm4 -i 0.0310440639524 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.505080924098 lms/lm2 -i 0.00396057344403 lms/lm3 -i 0.151636088265 lms/lm4 -i 0.0255818445224 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.541458399126 lms/lm2 -i 0.00234333783804 lms/lm3 -i 0.144041306344 lms/lm4 -i 0.0299270084105 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.508979289401 lms/lm2 -i 0.00607773011343 lms/lm3 -i 0.116120962046 lms/lm4 -i 0.027219016841 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.54596599678 lms/lm2 -i 0.00308954674096 lms/lm3 -i 0.133509056737 lms/lm4 -i 0.0294695122396 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.543416412513 lms/lm2 -i 0.00407260510725 lms/lm3 -i 0.13177081806 lms/lm4 -i 0.030388037422 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.476096694897 lms/lm2 -i 0.0026077325446 lms/lm3 -i 0.136719680634 lms/lm4 -i 0.0272396483411 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.491840935709 lms/lm2 -i 0.00462475917631 lms/lm3 -i 0.15315680982 lms/lm4 -i 0.020110667899 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.515873172824 lms/lm2 -i 0.00605722666548 lms/lm3 -i 0.141012030976 lms/lm4 -i 0.0239857127389 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.441840330973 lms/lm2 -i 0.0343109251371 lms/lm3 -i 0.138194577019 lms/lm4 -i 0.0229589439976 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.504223643598 lms/lm2 -i 0.00820945033793 lms/lm3 -i 0.138562619509 lms/lm4 -i 0.023629287949 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.496906318628 lms/lm2 -i 0.0113492860561 lms/lm3 -i 0.142509720227 lms/lm4 -i 0.0253926391457 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB009-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0824155610262 lms/lm2 -i 0.132207968409 lms/lm3 -i 0.282594506738 lms/lm4 -i 0.141235709504 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0631377462317 lms/lm2 -i 0.148814708903 lms/lm3 -i 0.312993166895 lms/lm4 -i 0.108504602705 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0835953308715 lms/lm2 -i 0.149248435121 lms/lm3 -i 0.328825930815 lms/lm4 -i 0.123942724432 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0695778682213 lms/lm2 -i 0.115325275306 lms/lm3 -i 0.341846685715 lms/lm4 -i 0.120265624851 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.140367603144 lms/lm2 -i 0.142034340109 lms/lm3 -i 0.273528506586 lms/lm4 -i 0.116870204811 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0819219199748 lms/lm2 -i 0.137696135486 lms/lm3 -i 0.294731909642 lms/lm4 -i 0.112044431697 lms/lm5 lib/wlists/train.lst lms/lm1 plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0633193701893 lms/lm2 -i 0.177950136323 lms/lm3 -i 0.290951100665 lms/lm4 -i 0.0959176054335 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0325326033535 lms/lm2 -i 0.144327811842 lms/lm3 -i 0.322316710134 lms/lm4 -i 0.0880149033028 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0768449333131 lms/lm2 -i 0.158352521718 lms/lm3 -i 0.308546109383 lms/lm4 -i 0.118855844682 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0632860947173 lms/lm2 -i 0.132512673836 lms/lm3 -i 0.321811531004 lms/lm4 -i 0.123854648581 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0556351535049 lms/lm2 -i 0.140904328762 lms/lm3 -i 0.319690723768 lms/lm4 -i 0.117497356364 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0454162763192 lms/lm2 -i 0.126176450551 lms/lm3 -i 0.31641550461 lms/lm4 -i 0.0894083242649 lms/lm5 lib/wlists/train.lst lms/lm1 grph-plp-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0762856979849 lms/lm2 -i 0.174410243489 lms/lm3 -i 0.307524421207 lms/lm4 -i 0.0909236483644 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0724410578947 lms/lm2 -i 0.162482652171 lms/lm3 -i 0.325843156472 lms/lm4 -i 0.0861306470726 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.069700430329 lms/lm2 -i 0.148904538743 lms/lm3 -i 0.358492337099 lms/lm4 -i 0.121947090909 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0409179172167 lms/lm2 -i 0.131665267975 lms/lm3 -i 0.384706152672 lms/lm4 -i 0.0911033240962 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.123883551238 lms/lm2 -i 0.151350187884 lms/lm3 -i 0.328158367225 lms/lm4 -i 0.101091059395 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.101061144611 lms/lm2 -i 0.145683976534 lms/lm3 -i 0.346645171585 lms/lm4 -i 0.0678829647364 lms/lm5 lib/wlists/train.lst lms/lm1 tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0856154942125 lms/lm2 -i 0.167299018164 lms/lm3 -i 0.347704883558 lms/lm4 -i 0.0757449784054 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-plp/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.100001104154 lms/lm2 -i 0.155254283373 lms/lm3 -i 0.346755400247 lms/lm4 -i 0.0540761606352 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-plp/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-plp/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0727385432786 lms/lm2 -i 0.151998411646 lms/lm3 -i 0.365886374405 lms/lm4 -i 0.097658813477 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-tandem/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.062911501862 lms/lm2 -i 0.163325213467 lms/lm3 -i 0.376721363057 lms/lm4 -i 0.0715316794051 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-tandem/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-tandem/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.134086877807 lms/lm2 -i 0.15344862257 lms/lm3 -i 0.344275379671 lms/lm4 -i 0.0908664953868 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-hybrid/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-hybrid/lm_int 
+
+base/bin/LMerge -C lib/cfgs/hlm.cfg -i 0.0914057524003 lms/lm2 -i 0.171755239114 lms/lm3 -i 0.346825460564 lms/lm4 -i 0.0534194776439 lms/lm5 lib/wlists/train.lst lms/lm1 grph-tandem-adapt-bg/def-4/adaptedby-grph-hybrid/YTBElect_YTB010-XXXXXXXX-XXXXXX/decode-grph-hybrid/lm_int 
+

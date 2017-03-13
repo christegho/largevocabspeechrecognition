@@ -171,7 +171,7 @@ done
 done
 
 #scoring
-#TODO
+
 for lmscale in 6.0 17.0 21.0 27.0 33.0 39.0
 do
 for show in 01 02 03 04 05 06 07 08 09 10
@@ -205,7 +205,7 @@ done
 done
 done
 
-#TODO
+
 for lmscale in 6.0 17.0 21.0 27.0 33.0 39.0
 do
 for PRUNE in 4000.0 
@@ -221,9 +221,9 @@ done
 
 for pruning in def-4
 do
-for lmscale in 6.0 17.0 21.0 27.0 33.0 39.0
+for lmscale in  33.0 39.0 #6.0 17.0 21.0 27.0
 do
-for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
+for model in  plp grph-plp tandem grph-tandem
 do
 for model1 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
 do
@@ -287,12 +287,27 @@ for lmscale in 6.0 #12.0 16. 18.0 24.0 36.0
 do
 for show in 01 02 03 04 05 06 07 08 09 10
 do
-for model in  plp grph-plp tandem grph-tandem hybrid grph-hybrid
+for model in  plp #grph-plp tandem grph-tandem hybrid grph-hybrid
 do	
 echo $model $show $lmscale >> eval_lmint.txt
 lmint=${model}-bg/PR4000.0/YTBElect_YTB0${show}-XXXXXXXX-XXXXXX/decode/lm_int
-lat=${model}-bg/PR4000.0/YTBElect_YTB0${show}-XXXXXXXX-XXXXXX/decode
-./scripts/lmrescore.sh -LMSCALE ${lmscale} -OUTPASS rescore-${lmscale} YTBElect_YTB0${show}-XXXXXXXX-XXXXXX lattices decode $lmint $lat TRUE >> eval_lmint.txt
+lat=${model}-bg/PR4000.0
+./scripts/lmrescore.sh -LMSCALE ${lmscale} -OUTPASS rescore-${lmscale} YTBElect_YTB0${show}-XXXXXXXX-XXXXXX lattices decode $lmint $lat FALSE >> eval_lmint.txt
+done
+done
+done
+
+
+
+for lmscale in 6.0 
+do
+for PRUNE in 4000.0 
+do
+for model in  plp #grph-plp tandem grph-tandem hybrid grph-hybrid
+do
+echo -------------------------------------------------- >> lmrescoreYTB.txt
+echo ${model} ${PRUNE} ${lmscale} >> lmrescoreYTB.txt
+./scripts/score.sh ${model}-bg/PR${PRUNE} YTBEdevsub rescore-${lmscale}  >> lmrescoreYTB.txt
 done
 done
 done

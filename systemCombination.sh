@@ -490,7 +490,6 @@ done
 done
 done
 
-#TODO
 for model1 in  plp grph-plp tandem grph-tandem
 do
 for model2 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
@@ -656,6 +655,7 @@ done
 ##########################
 #CN ROVER Mapping
 ##########################
+#IP
 for model1 in  plp grph-plp tandem grph-tandem
 do
 for model2 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
@@ -689,7 +689,7 @@ done
 done
 done
 
-#In PRog
+#Done
 for model1 in  plp grph-plp tandem grph-tandem
 do
 for model2 in plp  grph-plp tandem grph-tandem hybrid grph-hybrid
@@ -716,7 +716,7 @@ done
 done
 done
 done
-
+#In prog
 for model1 in  tandem 
 do
 for model2 in  hybrid grph-hybrid
@@ -729,7 +729,7 @@ for alpha in  0.2 0.4 0.6 0.8
 do
 for none in  0.2 0.4 0.7 0.9
 do
-file2=${model1}-adapt-bg/def-4/adaptedby-${model2}
+file2=${model1}-adapt-bg/def-4/adaptedby-${model2}/CN
 file1=${model3}-bg/CN
 d2=decode-${model2}_cn
 d1=decode_cn

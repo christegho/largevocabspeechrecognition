@@ -195,8 +195,8 @@ def test():
 	alignment_table = align(word_1, word_2, bt, timing_1, timing_2, scores_1, scores_2, none_score, 0.5)
 	print alignment_table
 
-def extractMLF(alpha, noneSc, file1, file2, timalign, decode1, decode2):
-	filenames = [file1+'/dev03_DEV001-20010117-XX2000/' +decode1+ '/rescore-tree.mlf',file2+'/dev03_DEV001-20010117-XX2000/' +decode2+ '/rescore-tree.mlf']
+def extractMLF(alpha, noneSc, file1, file2, timalign, decode1, decode2, show, fileout):
+	filenames = [file1+show +decode1,file2+show +decode2]
 	mlf = [];
 	mlfDet = [];
 	none_score = noneSc;
@@ -226,7 +226,7 @@ def extractMLF(alpha, noneSc, file1, file2, timalign, decode1, decode2):
 				mlfDet.append('*'+recs1[i].split('.\n')[1]+'\n')
 
 	mlf.append('.')
-	mlfFile = open('/home/ct506/MLSALT11/copy/dev03_DEV001-20010117-XX2000/decode/rescore.mlf', 'w')
+	mlfFile = open('/home/ct506/MLSALT11/'+fileout+show+'/lmrescore_cn/rescore.mlf', 'w')
 	for item in mlf:
 	  	mlfFile.write("%s" % item)
 
@@ -266,9 +266,13 @@ def main() :
                         help='file 2')
     parser.add_argument('--d2', dest='decode2', action='store', required=True,
                         help='file 2')
+    parser.add_argument('--show', dest='show', action='store', required=True,
+                        help='file 2')
+    parser.add_argument('--out', dest='fileout', action='store', required=True,
+                        help='file 2')
    
     args = parser.parse_args()
-    extractMLF(float(args.alpha), float(args.noneSc), args.file1, args.file2, float(args.timalign), args.decode1, args.decode2)
+    extractMLF(float(args.alpha), float(args.noneSc), args.file1, args.file2, float(args.timalign), args.decode1, args.decode2, args.show, args.fileout)
 
     
     

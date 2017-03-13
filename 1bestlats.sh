@@ -5,7 +5,6 @@
 set LMSCALE=12.0
 set INSPEN=-10.0
 set OUTPASS=1best
-set SYSTEM = plp
 
 set ALLARGS=($*)
 set CHANGED
@@ -28,11 +27,6 @@ while ( $?CHANGED )
     set CHANGED
     shift argv
     set OUTPASS = $argv[1]
-    shift argv
-  endif
-  if ( "$argv[1]" == "-SYS" )  then
-    shift argv
-    set SYSTEM = $argv[1]
     shift argv
   endif
 end
@@ -70,22 +64,10 @@ else
     exit 0
 endif
 
-set dicttrain = train.lv.dct
-set flistsys = flists
-if (( $SYSTEM == "grph-plp" ) || ( $SYSTEM == "grph-tandem" )) then
-    set dicttrain = train-grph.lv.dct  
-endif
-if (( $SYSTEM == "tandem" ) || ( $SYSTEM == "grph-tandem" )) then
-    set flistsys=flists_tandem
-endif
-
-
-set SCP       = lib/${flistsys}/${TESTSET}.scp 
-set DICT      = lib/dicts/${dicttrain}
+set SCP       = lib/flists/${TESTSET}.scp 
+set DICT      = lib/dicts/train.lv.dct
 set HLRESCORE = base/bin/HLRescore 
 set CFG       = lib/cfgs/hlrescore.cfg
-
-echo $flistsys $dicttrain $SCP $DICT
 
 cat > $WORKDIR/run.bat  <<EOF 
 #!/bin/bash

@@ -114,27 +114,6 @@ $HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
 
 $HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
 -a -J $WORKDIR/xforms cmllr -E $WORKDIR/xforms cmllr \
--J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr1 \
--u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG1.mllr 
-
-$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
--a -J $WORKDIR/xforms mllr1 -E $WORKDIR/xforms mllr1 \
--J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr2 \
--u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG2.mllr 
-
-$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
--a -J $WORKDIR/xforms mllr2 -E $WORKDIR/xforms mllr2 \
--J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr3 \
--u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG3.mllr 
-
-$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
--a -J $WORKDIR/xforms mllr3 -E $WORKDIR/xforms mllr3 \
--J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr4 \
--u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG4.mllr 
-
-
-$HEREST -A -D -H ${MMF} -T 1 -C ${CFG} $PRUNE \
--a -J $WORKDIR/xforms mllr4 -E $WORKDIR/xforms mllr4 \
 -J lib/classes -C ${MLLRCFG} -h "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_*" -K $WORKDIR/xforms mllr \
 -u a -I $WORKDIR/model.mlf  -S ${WORKDIR}/flists/${TESTSET}.scp hmms/xwrd.clustered.$SYSTEM >& $WORKDIR/LOG.mllr 
 

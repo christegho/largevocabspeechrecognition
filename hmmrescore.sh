@@ -5,7 +5,6 @@
 set LMSCALE=12.0
 set INSPEN=-10.0
 set OUTPASS=decode
-set PRUNETHR=250
 unset ADAPTSRC
 
 set ALLARGS=($*)
@@ -17,12 +16,6 @@ while ( $?CHANGED )
     set CHANGED
     shift argv
     set LMSCALE = $argv[1]
-    shift argv
-  endif
-  if ( "$argv[1]" == "-PRUNE" )  then
-    set CHANGED
-    shift argv
-    set PRUNETHR = $argv[1]
     shift argv
   endif
   if ( "$argv[1]" == "-INSPEN" )  then
@@ -74,14 +67,14 @@ if ( $SYSTEM == "plp" ) then
     set SCP = lib/flists/${TESTSET}.scp 
     set CFG = lib/cfgs/hdecode.cfg
     set DICT    = lib/dicts/train.lv.dct
-    set PRUNE = ( -t ${PRUNETHR} ${PRUNETHR} -v 175.0 135.0 -u 10000 -n 32 )
+    set PRUNE = ( -t 250.0 250.0 -v 175.0 135.0 -u 10000 -n 32 )
 else if (( $SYSTEM == "tandem" ) || ( $SYSTEM == "tandem-sat" ))then
     set HDECODE = base/bin/HDecode 
     set MMF = hmms/MMF.${SYSTEM}
     set SCP = lib/flists_tandem/${TESTSET}.scp 
     set CFG = lib/cfgs/hdecode_tandem.cfg
     set DICT    = lib/dicts/train.lv.dct
-    set PRUNE = ( -t ${PRUNETHR} ${PRUNETHR} -v 250.0 200.0 -u 10000 -n 32 )
+    set PRUNE = ( -t 400.0 400.0 -v 250.0 200.0 -u 10000 -n 32 )
     set LMSCALE=21.0
 else if ( $SYSTEM == "hybrid" ) then
     if ( $?ADAPTSRC ) then 
@@ -93,21 +86,21 @@ else if ( $SYSTEM == "hybrid" ) then
     set SCP = lib/flists/${TESTSET}.scp 
     set CFG = lib/cfgs/hdecode_hybrid.cfg
     set DICT    = lib/dicts/train.lv.dct
-    set PRUNE = ( -t ${PRUNETHR} ${PRUNETHR}  -v 175.0 135.0 -u 10000 -n 32 )
+    set PRUNE = ( -t 250.0 250.0 -v 175.0 135.0 -u 10000 -n 32 )
 else if ( $SYSTEM == "grph-plp" ) then
     set HDECODE = base/bin/HDecode 
     set MMF = hmms/MMF.${SYSTEM}
     set SCP = lib/flists/${TESTSET}.scp 
     set CFG = lib/cfgs/hdecode.cfg
     set DICT    = lib/dicts/train-grph.lv.dct
-    set PRUNE = ( -t ${PRUNETHR} ${PRUNETHR} -v 175.0 135.0 -u 10000 -n 32 )
+    set PRUNE = ( -t 250.0 250.0 -v 175.0 135.0 -u 10000 -n 32 )
 else if ( $SYSTEM == "grph-tandem" ) then
     set HDECODE = base/bin/HDecode 
     set MMF = hmms/MMF.${SYSTEM}
     set SCP = lib/flists_tandem/${TESTSET}.scp 
     set CFG = lib/cfgs/hdecode_tandem.cfg
     set DICT    = lib/dicts/train-grph.lv.dct
-    set PRUNE = ( -t ${PRUNETHR} ${PRUNETHR} -v 250.0 200.0 -u 10000 -n 32 )
+    set PRUNE = ( -t 400.0 400.0 -v 250.0 200.0 -u 10000 -n 32 )
     set LMSCALE=21.0
 else if ( $SYSTEM == "grph-hybrid" ) then
     if ( $?ADAPTSRC ) then 
@@ -119,7 +112,7 @@ else if ( $SYSTEM == "grph-hybrid" ) then
     set SCP = lib/flists/${TESTSET}.scp 
     set CFG = lib/cfgs/hdecode_hybrid.cfg
     set DICT    = lib/dicts/train-grph.lv.dct
-    set PRUNE = ( -t ${PRUNETHR} ${PRUNETHR} -v 175.0 135.0 -u 10000 -n 32 )
+    set PRUNE = ( -t 250.0 250.0 -v 175.0 135.0 -u 10000 -n 32 )
 else
     echo "Unknown system kind: $SYSTEM"
     exit 0
